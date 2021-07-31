@@ -1,1 +1,19 @@
 > # HTML 공부 정리
+태그종류
+|태그명|
+|--|
+|html|
+|head|
+|title|
+|meta|
+|body|
+|strong|
+|u|
+|h1~h6|
+|br|
+|p|
+|img|
+|li|
+|ul|
+|ol|
+|a|
