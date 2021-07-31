@@ -1,5 +1,6 @@
-> # 스프링 부트 & JPA 활용한 웹개발 공부
+# 스프링 부트 & JPA 활용한 웹개발 공부
 
+<br><br>
 
 > ## domain 계층
 주요 Annotation(어노테이션(@))
@@ -20,6 +21,7 @@
 |@JoinColumn|
 |@Enumerated|
 
+<br><br>
 
 > ## repository 계층
 주요 Annotation(어노테이션(@))
@@ -29,6 +31,7 @@
 |@PersistenceContext|
 |@RequiredArgsConstructor|
 
+<br><br>
 
 > ## service 계층
 주요 Annotation(어노테이션(@))
@@ -39,6 +42,7 @@
 |@Autowired|
 |@RequiredArgsConstructor|
 
+<br><br>
 
 > ## controller, web 계층
 주요 Annotation(어노테이션(@))
@@ -54,6 +58,7 @@
 |@ModelAttribute|
 |@RequestParam|
 
+<br><br>
 
 > ## 테스트 코드
 주요 Annotation(어노테이션(@))
