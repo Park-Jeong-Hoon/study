@@ -115,3 +115,32 @@ padding을 이용해 박스와 박스 속 단어 사이의 간격을 조절할 �
             height: 100px;
         }
 ```
+
+그리드<br>
+Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠주고 싶을 때 아래 코드와 같이 하면 된다.
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        #grid {
+            border: 5px solid lightpink;
+            display: grid;
+            grid-template-columns: 100px 1fr; /*앞에 100px는 첫번쨰 컬림 길이, 뒤에 1fr은 남는 공간 길이*/
+            /*grid-template-columns: 1fr 1fr; 이런식으로 해주면 비율, 1:1 (첫번째 컬럼:두번째 컬럼)*/
+        }
+        div {
+            border: 5px solid skyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="grid"> <!--Korea, 대한민국을 나란히 놓기 위한 부모 태그-->
+    <div>Korea</div> <!--의미 없는 태그, 오로지 디자인을 위함 -->
+    <div>대한민국</div>
+</div>
+</body>
+</html>
+```html
