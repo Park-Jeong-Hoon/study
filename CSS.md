@@ -103,7 +103,7 @@ CSS 박스모델<br>
 </body>
 </html>
 ```
-또한 태그로 둘러쌓인 부분을 안보이게 하고 싶을 경우에는 disply:none;으로 해주면 된다.<br>
+또한 태그로 둘러쌓인 부분을 안보이게 하고 싶을 경우에는 disply:none;으로 해주면 된다.<br><br>
 
 padding을 이용해 박스와 박스 속 단어 사이의 간격을 조절할 수 있고 margin을 이용해 박스와 박스 외부 사이의 간격을 조절할 수가 있다. width, height를 이용하면 가로 세로 폭을 지정할 수 있다.
 ```css
@@ -143,4 +143,32 @@ Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠�
 </div>
 </body>
 </html>
+```
+
+<br>미디어쿼리 -> @media를 이용해서 반응형 웹사이트를 만들 수가 있다.<br>
+아래 코드를 실행 시켜주면 웹페이지의 가로 크기에 변화를 주다보면 500px 이하일 때는 '반응형 웹사이트'라는 문구와 이를 둘러싼 테두리가 보이지 않게 된다.
 ```html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            border: 10px solid black;
+            font-size: 50px;
+        }
+        @media (max-width: 500px) {
+            div {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    반응형 웹사이트
+</div>
+</body>
+</html>
+```
