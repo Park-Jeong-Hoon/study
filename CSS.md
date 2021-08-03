@@ -172,3 +172,8 @@ Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠�
 </body>
 </html>
 ```
+
+<br>style태그 안에 있는 CSS코드를 css파일을 별도로 만들어 거기에 저장해서 같은 CSS를 여러 파일에 적용할 수가 있다. css파일을 다른 파일에서 이용하려면 head태그 안에 아래의 코드를 작성하면 된다. (css파일명이 style 일 경우를 예시로 듬)
+```html
+<link rel="stylesheet" href="style.css">
+```
