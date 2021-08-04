@@ -29,7 +29,7 @@ const c = "great"; //String
 const d = true; //Boolean
 ```
 
-<br>배열 초기화
+<br>배열
 ```javascript
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //정수형 데이터를 담는 배열
 console.log(numbers); //배열 요소를 모두 출력하려면 이렇게
@@ -46,4 +46,49 @@ const arr = [29, 14.62, "great", true]; //다양한 타입의 데이터를 담�
 ```javascript
 const num = 47;
 const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
+```
+
+<br>객체
+```javascript
+const kimInfo = { //이렇게 객체를 만든다.
+    name: "Kim",
+    age: 29,
+    gender: "Male"
+}
+
+console.log(kimInfo); //객체를 한번에 출력
+```
+
+```javascript
+const kimInfo = { //이렇게 객체를 만든다.
+    name: "Kim",
+    age: 29,
+    gender: "Male"
+}
+
+console.log(kimInfo.age); //객체에서 원하는 값 접근 가능
+
+kimInfo.age = 30; //객체가 const이지만 그 안의 값을 변경 가능, 객체 자체는 변경 못함
+
+console.log(kimInfo.age);
+```
+
+```javascript
+const davidInfo = {
+    name: "David",
+    age: 25,
+    job: "Developer",
+    hobby: ["Playing game", "Watching movie",
+    "Reading book"], //객체 안에 배열을 담을 수 있음
+    favSports: [
+        { //배열 안에 객체를 담을 수 있음
+            name:"Baseball",
+            isWithBall:true
+        },
+        {
+            name:"Swimming",
+            isWithBall:false
+        }
+    ]
+}
 ```
