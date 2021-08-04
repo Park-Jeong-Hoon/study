@@ -1,5 +1,5 @@
 ># JavaScript 공부 정리
-html파일에 JavaScript파일 추가하기<br>
+## html파일에 JavaScript파일 추가하기<br>
 ```html
 <body>
     Hello world!!
@@ -8,7 +8,7 @@ html파일에 JavaScript파일 추가하기<br>
 ```
 
 
-<br>변수 초기화
+## <br> 변수 초기화
 ```javascript
 let a = 1;
 console.log(a); //결과 = 1, console.log()를 이용해 콘솔창에 출력 가능
@@ -29,7 +29,7 @@ const c = "great"; //String
 const d = true; //Boolean
 ```
 
-<br>배열
+## <br>배열
 ```javascript
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //정수형 데이터를 담는 배열
 console.log(numbers); //배열 요소를 모두 출력하려면 이렇게
@@ -48,7 +48,7 @@ const num = 47;
 const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
 ```
 
-<br>객체
+## <br>객체
 ```javascript
 const kimInfo = { //이렇게 객체를 만든다.
     name: "Kim",
@@ -91,4 +91,33 @@ const davidInfo = {
         }
     ]
 }
+```
+console.log()에서 console 역시 객체이고 log는 console이라는 객체가 가지고 있는 함수이다.<br><br>
+
+## 함수
+```javascript
+//함수는 이렇게 작성
+function func() {
+    console.log("This is funcion");
+}
+
+func(); //이렇게 함수를 호출하면 함수 기능 수행
+```
+
+```javascript
+//매개변수 있는 함수
+function func(what) {
+    console.log("This is funcion", what);
+}
+
+func(1); //함수 호출시 함수에 필요한 인자 넣어줌
+```
+
+```javascript
+//여러개의, 다양한 타입의 매개변수 받을 수 있음
+function func(a, b) {
+    console.log("This is funcion", a, " Hello ", b);
+}
+
+func(1, "Man");
 ```
