@@ -121,3 +121,57 @@ function func(a, b) {
 
 func(1, "Man");
 ```
+
+```javascript
+//여러개의, 다양한 타입의 매개변수 받을 수 있음
+function func(a, b) {
+    console.log('Hello ' + a + " you are " + b + " years old");
+} //JavaScript에서는 "", '' 모두 String 형이다.
+
+func("Man", 25);
+```
+
+```javascript
+function func(a, b) {
+    console.log(`Hello ${a} you are ${b} years old`);
+} //JavaScript에서는 String을 위와 같이 표현할 수도 있다. (``로 감싸주고 ${변수명})
+
+func("Man", 25);
+```
+
+```javascript
+function func(a, b) {
+    return `Hello ${a} you are ${b} years old`;
+} //이렇게 함수 안에서 값을 반환해서
+
+const result = func("Man", 25); //함수의 결과 값을 이용하는 것이 좋다.
+
+console.log(result);
+```
+
+```javascript
+const cal = { //계산 기능을 가진 객체
+    plus: function(n, m) { //덧셈 함수
+        return n + m;
+    },
+    minus: function(n, m) { //뻴셈 함수
+        return n - m;
+    },
+    multiply: function(n, m) { //곱셈 함수
+        return n * m;
+    },
+    divide: function(n, m) { //덧셈 함수
+        return n / m;
+    }
+}
+
+const plusResult = cal.plus(10, 5); //객체의 함수를 접근해서 결과를 받아옴
+const minusResult = cal.minus(10, 5);
+const mulResult = cal.multiply(10, 5);
+const divResult = cal.divide(10, 5);
+
+console.log(plusResult);
+console.log(minusResult);
+console.log(mulResult);
+console.log(divResult);
+```
