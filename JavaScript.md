@@ -175,3 +175,31 @@ console.log(minusResult);
 console.log(mulResult);
 console.log(divResult);
 ```
+
+## <br>DOM(Document Object Model)<br>
+JavaScript는 HTML과 함께 쓰일 수 있다. HTML파일과 JavaScript파일이 각각 아래와 같다고 할 때<br>
+
+HTML파일
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Something</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <h1 id="hello">Hello world!!</h1>
+    <script src="index.js"></script> <!--자바스크립트 파일명.js-->
+</body>
+</html>
+```
+
+JavaScript파일
+```JavaScript
+const ex = document.getElementById("hello");
+
+ex.innerHTML = "Hi";
+```
+
+html파일의 실행결과로 Hello world!!라는 문장이 아닌 Hi라는 문장이 나온다. 이는 자바스크립트에서 document.getElementById를 통해 HTML파일에서 Id가 hello인 요소를 가져와서 ex에 저장한 다음 ex에서 innerHTML을 통해 Hello world!!를 Hi라고 변경해준 것이다.
