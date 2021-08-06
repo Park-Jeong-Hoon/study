@@ -214,3 +214,28 @@ document.title = "wow";
 
 getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelctor을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다.
 
+
+## 이벤트 & 이벤트 핸들러
+<br>보통 함수를 호출할 때 함수 이름이 func라면 func()라고 호출을 하는데 이벤트 핸들러 함수의 경우에는 func라고 호출한다. 왜냐하면 func()는 함수를 즉시 호출한다는 의미이고 func는 함수를 필요한시점에, 즉 아래 코드에서는 window.addEventListener("resize", func)의 경우에는 화면에 변화를 주는 시점에만 호출을 한다는 의미이다. 만약 이 부분에서 func를 func()로 바꿔주고 콘솔창을 보면 웹페이지를 처음 열었을 때만 func함수가 호출되고 사이즈의 변화를 줄 때는 정작 호출이 안된다. 하지만 func()로 바꿔주면 사이즈의 변화를 줄 때만 호출이 된다.
+```javascript
+const ex = document.querySelector("#hello");
+
+function func() {
+    console.log("resize event")
+}
+
+window.addEventListener("resize", func());
+```
+
+위의 HTML파일과 아래의 JavaScript파일을 같이 이용하면 Id가 hello인 부분 즉, 여기서는 Hello world!!부분을 클릭할 때마다 이벤트가 발생한다.
+```javascript
+const ex = document.querySelector("#hello");
+
+function isClicked(event) {
+    console.log(event)
+}
+
+ex.addEventListener("click", isClicked);
+```
+
+
