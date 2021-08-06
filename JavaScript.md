@@ -202,4 +202,15 @@ const ex = document.getElementById("hello");
 ex.innerHTML = "Hi";
 ```
 
-html파일의 실행결과로 Hello world!!라는 문장이 아닌 Hi라는 문장이 나온다. 이는 자바스크립트에서 document.getElementById를 통해 HTML파일에서 Id가 hello인 요소를 가져와서 ex에 저장한 다음 ex에서 innerHTML을 통해 Hello world!!를 Hi라고 변경해준 것이다.
+html파일의 실행결과로 Hello world!!라는 문장이 아닌 Hi라는 문장이 나온다. 이는 자바스크립트에서 document.getElementById를 통해 HTML파일에서 Id가 hello인 요소를 가져와서 ex에 저장한 다음 ex에서 innerHTML을 통해 Hello world!!를 Hi라고 변경해준 것이다. 또한 아래와 같이 querySelector을 이용해서
+css에서의 표현처럼 id, class 등 html의 모든 요소들을 대상으로 찾아서 원하는대로 바꿔줄 수도 있다.
+
+```javascript
+const ex = document.querySelector("#hello");
+ex.innerHTML = "Hi";
+ex.style.color = "red";
+document.title = "wow";
+```
+
+getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelctor을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다.
+
