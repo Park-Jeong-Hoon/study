@@ -215,8 +215,8 @@ document.title = "wow";
 getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelctor을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다.
 
 
-## 이벤트 & 이벤트 핸들러
-<br>보통 함수를 호출할 때 함수 이름이 func라면 func()라고 호출을 하는데 이벤트 핸들러 함수의 경우에는 func라고 호출한다. 왜냐하면 func()는 함수를 즉시 호출한다는 의미이고 func는 함수를 필요한시점에, 즉 아래 코드에서는 window.addEventListener("resize", func)의 경우에는 화면에 변화를 주는 시점에만 호출을 한다는 의미이다. 만약 이 부분에서 func를 func()로 바꿔주고 콘솔창을 보면 웹페이지를 처음 열었을 때만 func함수가 호출되고 사이즈의 변화를 줄 때는 정작 호출이 안된다. 하지만 func()로 바꿔주면 사이즈의 변화를 줄 때만 호출이 된다.
+## <br>이벤트 & 이벤트 핸들러
+보통 함수를 호출할 때 함수 이름이 func라면 func()라고 호출을 하는데 이벤트 핸들러 함수의 경우에는 func라고 호출한다. 왜냐하면 func()는 함수를 즉시 호출한다는 의미이고 func는 함수를 필요한시점에, 즉 아래 코드에서는 window.addEventListener("resize", func)의 경우에는 화면에 변화를 주는 시점에만 호출을 한다는 의미이다. 만약 이 부분에서 func를 func()로 바꿔주고 콘솔창을 보면 웹페이지를 처음 열었을 때만 func함수가 호출되고 사이즈의 변화를 줄 때는 정작 호출이 안된다. 하지만 func()로 바꿔주면 사이즈의 변화를 줄 때만 호출이 된다.
 ```javascript
 const ex = document.querySelector("#hello");
 
@@ -239,3 +239,143 @@ ex.addEventListener("click", isClicked);
 ```
 
 
+조건문을 이용하면 보다 다양한 이벤트 처리를 할 수가 있다. 아래의 코드를 위의 HTML파일과 함께 이용해서 실행하면 Hello world!! 부분을 클릭할 때마다 색깔이 계속 변화한다.
+참고로 자바스크립트의 비교연산자에서 주목할 부분이 있는데 바로 ==과 ===이다. ==은 값만 비교하지만 ===은 값과 타입을 모두 비교한다. 예를 들면 1 == "1" 의 결과는 true이고 1 === "1" 의 결과는 false이다. 마찬가지로 같지 않은지를 비교할 때는 값만 비교하는 !=, 값과 타입 모두 비교하는 !==를 이용한다.
+```javascript
+const ex = document.querySelector("#hello");
+
+const colorOne = "rgb(255, 0, 0)"; //color을 표기할 때 이렇게 안하고 #3498db같은 식으로 하면 비교연산할 때 잘 되지 않는다.
+const colorTwo = "rgb(0, 0, 255)";
+
+function isClick() {
+    const colorNow = ex.style.color;
+    if(colorNow === colorOne) {
+        ex.style.color = colorTwo;
+    } else {
+        ex.style.color = colorOne;
+    }
+}
+
+function init() {
+    ex.style.color = colorOne;
+    ex.addEventListener("click", isClick);
+    //ex.addEventListener("mouseenter", isClick); //mouseenter이벤트로 하면 클릭이 아니라 마우스가 텍스트 안에 들어갈 때마다 색이 바뀐다.
+}
+
+init();
+```
+JavasCript에는 click 외에도 다양한 이벤트들이 있는데 무슨 이벤트가 있는지 알고 싶으면 https://developer.mozilla.org/ko/docs/Web/Events 로 가면 된다.<br>
+지금까지 JavaScript코드를 보면 HTML, CSS에서 할 일까지 너무 다하고 있는데 이건 그렇게 좋지 않은 방식이다. JavaScript에서는 로직을 처리하게 하는 것이 좋다.
+
+CSS파일을 이렇게 만들어 주고
+```css
+body {
+    background-color: #ecf0f1;
+}
+
+h1 {
+    color: #3498db;
+}
+
+.clicked {
+    color: #8e44ad;
+}
+```
+
+JavaScript파일을 이렇게 만든다.
+```javascript
+const ex = document.querySelector("#hello");
+
+const clikedClass = "clicked";
+
+function isClicked() {
+    const classNow = ex.className;
+    if(classNow == clikedClass) { //클래스명이 css파일의 clicked와 같으면 클래스명 ""로
+        ex.className = "";
+    } else {
+        ex.className = clikedClass; //다르면 clicked로 클래스명 설정
+    }
+}
+
+function init() {
+    ex.addEventListener("click", isClicked);
+}
+
+init();
+```
+이렇게 되면 처음에 클릭을 했을 때 hello 아이디로 가져온 ex에는 클래스이름이 없어서 JavaScript파일에서 isClicked함수에서 클래스이름이 없으니까 else문으로 가고 CSS파일에서 설정된 clicked클래스의 속성들이 적용되면서 색이 변하고 그 다음에는 클래스이름이 clicked이므로 if문으로 가서 클래스네임이 ""로 바뀌면서 clicked클래스의 속성들이 적용되었던게 지워지면서 이전의 색으로 바뀌게 된다. 그런데 이렇게 코드를 짜면 문제가 발생하는 경우가 있다. 조금더 코드를 추가해본다.<br>
+
+HTML코드에 h1태그에 클래스네임을 지정한다.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Something</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <h1 id="hello" class="hi">Hello world!!</h1> <!-- 클래스명 "hi" -->
+    <script src="index.js"></script> <!--자바스크립트 파일명.js-->
+</body>
+</html>
+```
+
+CSS코드에 앞에서 만든 hi클래스의 속성을 설정한다.
+```css
+body {
+    background-color: #ecf0f1;
+}
+
+h1 {
+    color: #3498db;
+    transition: color 0.5s ease-in-out;
+}
+
+.clicked {
+    color: #8e44ad;
+}
+
+.hi {
+    cursor: pointer;
+}
+```
+JavaScript 파일은 그대로 놔두고 실행을 하면 마우스로 텍스트에 갖다댔을 때 처음에는 커서가 손모양으로 바뀌지만 한번 클릭한 이후로는 클래스명이 바뀌어버리기 때문에 커서가 손모양으로 더이상 발생하지 않는다. 이를 해결하기 위해서는 classList를 사용할 수가 있다.
+
+```javascript
+const ex = document.querySelector("#hello");
+
+const clikedClass = "clicked";
+
+function isClicked() {
+    const hasClicked = ex.classList.contains(clikedClass);
+    if(hasClicked) { //classList에 "clicked"가 포함되어있으면 그것을 제거
+        ex.classList.remove(clikedClass);
+    } else {
+        ex.classList.add(clikedClass); //아니면 그것을 추가
+    }
+}
+
+function init() {
+    ex.addEventListener("click", isClicked);
+}
+
+init();
+```
+JavaScript 코드를 이렇게 수정하면 위의 문제가 해결된다. 놀라운점은 여기서 좀 더 개선을 할 수가 있다는 점이다. 바로 toggle을 이용해서 말이다. 위의 코드를 보면 isClicked함수가 조금 길다. 그런데 toggle이라는 함수는 어떤 클래스가 클래스리스트에 있는지 체크해서 있으면 remove, 없으면 add를 해주는 함수라서 코드의 길이를 확 줄일 수가 있다. 아래 코드처럼 수정하면 코드의 길이는 훨씬 줄고 결과는 같게 나온다.
+
+```javascript
+const ex = document.querySelector("#hello");
+
+const clikedClass = "clicked";
+
+function isClicked() {
+    const hasClicked = ex.classList.toggle(clikedClass);
+}
+
+function init() {
+    ex.addEventListener("click", isClicked);
+}
+
+init();
+```
