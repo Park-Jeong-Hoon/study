@@ -19,3 +19,7 @@
 |a|href 속성값에 연결하고 싶은 사이트의 주소를 넣어줌으로써 링크를 생성하여 이 링크를 클릭하면 해당 페이지로 이동할 수 있게 함|
 |style|css를 사용할 수 있도록 함|
 |div|다른 태그들과 다르게 별다른 의미를 가지고 있지 않고 레이아웃을 나누는데 사용된다.|
+|form|정보를 입력할 때 그것들을 전부 감싸는 태그, name(form의 이름), action(form이 전송되는 서버 url), method(get, post같은 전송 방식), target(action에서 지정한 주소창을 새로운 창으로 열기) 등의 속성과 함께 사용됨|
+|input|form태그 내부의 태그로 type(입력형식)속성과 함께 쓰인다. type 값으로는 "text", "password", "button", "submit", "hidden" 등이 있다.|
+|textarea|여러줄의 텍스트를 입력할 때 사용됨|
+|select|드롭 다운 형식의 선택 항목을 만들 때 사용됨|
