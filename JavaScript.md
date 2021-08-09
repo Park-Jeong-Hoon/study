@@ -23,11 +23,14 @@ console.log(a); //결과 = 1
 
 ```javascript
 //다양한 타입 저장 가능
-const a = 29; //Int
+const a = 29; //Integer
 const b = 14.62; //Float
 const c = "great"; //String
 const d = true; //Boolean
 ```
+let -> 재선언X, 재할당O<br>
+const -> 재선언X, 재할당X<br>
+var -> 재선언O, 재할당O<br>
 
 ## <br>배열
 ```javascript
