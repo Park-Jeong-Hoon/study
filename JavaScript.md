@@ -36,6 +36,8 @@ var -> 재선언O, 재할당O<br>
 ```javascript
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //정수형 데이터를 담는 배열
 console.log(numbers); //배열 요소를 모두 출력하려면 이렇게
+numbers.push(11); //배열에 새로운 항목 추가도 가능
+console.log(numbers[0]); //접근은 이렇게한다. (왼쪽의 결과는 1)
 ```
 
 ```javascript
