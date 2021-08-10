@@ -57,7 +57,7 @@ const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 
 <br>객체 생성&출력
 ```javascript
 const kimInfo = { //이렇게 객체를 만든다.
-    name: "Kim",
+    name: "Kim",  //안에는 속성들이 있다.
     age: 29,
     gender: "Male"
 }
@@ -73,13 +73,13 @@ const kimInfo = {
     gender: "Male"
 }
 
-console.log(kimInfo.age); //객체에서 원하는 값 접근 방법1
-console.log(kimInfo["age"]); //객체에서 원하는 값 접근 방법2
+console.log(kimInfo.age); //객체에서 원하는 속성값 접근 방법1
+console.log(kimInfo["age"]); //객체에서 원하는 속성값 접근 방법2
 
-kimInfo.age = 30; //객체가 const이지만 그 안의 값을 변경 가능, 객체 자체는 변경 못함
+kimInfo.age = 30; //객체가 const이지만 그 안에 있는 속성의 값을 변경 가능, 객체 자체는 변경 못함
 kimInfo.nationality = "Korea"; //이렇게 새로운 속성을 추가할 수도 있다.
 
-console.log(kimInfo.age); //객체의 원하는 요소만 출력
+console.log(kimInfo.age); //객체의 원하는 속성값만 출력
 ```
 
 <br>객체 속 배열&객체
