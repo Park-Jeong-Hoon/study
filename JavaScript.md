@@ -1,5 +1,5 @@
 ># JavaScript 공부 정리
-## html파일에 JavaScript파일 추가하기<br>
+## <br>html파일에 JavaScript파일 추가하기
 ```html
 <body>
     Hello world!!
@@ -8,7 +8,7 @@
 ```
 
 
-## <br> 변수 초기화
+## <br><br> 변수 초기화
 ```javascript
 let a = 1;
 console.log(a); //결과 = 1, console.log()를 이용해 콘솔창에 출력 가능
@@ -32,7 +32,7 @@ let -> 재선언X, 재할당O<br>
 const -> 재선언X, 재할당X<br>
 var -> 재선언O, 재할당O<br>
 
-## <br>배열
+## <br><br>배열
 ```javascript
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] //정수형 데이터를 담는 배열
 console.log(numbers); //배열 요소를 모두 출력하려면 이렇게
@@ -53,7 +53,7 @@ const num = 47;
 const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
 ```
 
-## <br>객체
+## <br><br>객체
 <br>객체 생성&출력
 ```javascript
 const kimInfo = { //이렇게 객체를 만든다.
@@ -102,9 +102,10 @@ const davidInfo = {
     ]
 }
 ```
-console.log()에서 console 역시 객체이고 log는 console이라는 객체가 가지고 있는 함수이다.<br><br>
+console.log()에서 console 역시 객체이고 log는 console이라는 객체가 가지고 있는 함수이다.
 
-## 함수
+## <br><br>함수
+<br>함수 작성 방법
 ```javascript
 //함수는 이렇게 작성
 function func() {
@@ -114,6 +115,7 @@ function func() {
 func(); //이렇게 함수를 호출하면 함수 기능 수행
 ```
 
+<br>매개변수 있는 함수
 ```javascript
 //매개변수 있는 함수
 function func(what) {
@@ -149,6 +151,7 @@ function func(a, b) {
 func("Man", 25);
 ```
 
+<br>함수 안에서 되도록 결과값 반환하도록
 ```javascript
 function func(a, b) {
     return `Hello ${a} you are ${b} years old`;
@@ -159,8 +162,10 @@ const result = func("Man", 25); //함수의 결과 값을 이용하는 것이 �
 console.log(result);
 ```
 
+<br>객체 안의 함수
 ```javascript
 const cal = { //계산 기능을 가진 객체
+    //객체 안에서 함수를 만들 때에는 아래와 같이 '함수명:function(인자){함수내용}' 형식으로 작성한다.
     plus: function(n, m) { //덧셈 함수
         return n + m;
     },
@@ -186,7 +191,7 @@ console.log(mulResult);
 console.log(divResult);
 ```
 
-## <br>DOM(Document Object Model)<br>
+## <br><br>DOM(Document Object Model)<br>
 JavaScript는 HTML과 함께 쓰일 수 있다. HTML파일과 JavaScript파일이 각각 아래와 같다고 할 때<br>
 
 HTML파일
@@ -225,7 +230,7 @@ document.title = "wow";
 getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelctor을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다.
 
 
-## <br>이벤트 & 이벤트 핸들러
+## <br><br>이벤트 & 이벤트 핸들러
 보통 함수를 호출할 때 함수 이름이 func라면 func()라고 호출을 하는데 이벤트 핸들러 함수의 경우에는 func라고 호출한다. 왜냐하면 func()는 함수를 즉시 호출한다는 의미이고 func는 함수를 필요한시점에, 즉 아래 코드에서는 window.addEventListener("resize", func)의 경우에는 화면에 변화를 주는 시점에만 호출을 한다는 의미이다. 만약 이 부분에서 func를 func()로 바꿔주고 콘솔창을 보면 웹페이지를 처음 열었을 때만 func함수가 호출되고 사이즈의 변화를 줄 때는 정작 호출이 안된다. 하지만 func()로 바꿔주면 사이즈의 변화를 줄 때만 호출이 된다.
 ```javascript
 const ex = document.querySelector("#hello");
