@@ -30,7 +30,19 @@ const d = true; //Boolean
 ```
 let -> 재선언X, 재할당O<br>
 const -> 재선언X, 재할당X<br>
-var -> 재선언O, 재할당O<br>
+var -> 재선언O, 재할당O<br><br>
+typeof를 이용하면 변수에 어떤 타입의 값이 들어있는지 알 수가 있다.
+```javascript
+const a = 29;
+const b = 14.62;
+const c = "great";
+const d = true;
+
+console.log(typeof a); //number
+console.log(typeof b); //number
+console.log(typeof c); //string
+console.log(typeof d); //boolean
+```
 
 ## <br><br>배열
 ```javascript
