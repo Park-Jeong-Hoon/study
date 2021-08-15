@@ -229,8 +229,7 @@ const ex = document.getElementById("hello");
 ex.innerHTML = "Hi";
 ```
 
-html파일의 실행결과로 Hello world!!라는 문장이 아닌 Hi라는 문장이 나온다. 이는 자바스크립트에서 document.getElementById를 통해 HTML파일에서 Id가 hello인 요소를 가져와서 ex에 저장한 다음 ex에서 innerHTML을 통해 Hello world!!를 Hi라고 변경해준 것이다. 또한 아래와 같이 querySelector을 이용해서
-css에서의 표현처럼 id, class 등 html의 모든 요소들을 대상으로 찾아서 원하는대로 바꿔줄 수도 있다.
+html파일의 실행결과로 Hello world!!라는 문장이 아닌 Hi라는 문장이 나온다. 이는 자바스크립트에서 document.getElementById를 통해 HTML파일에서 Id가 hello인 element를 가져와서 ex에 저장한 다음 ex에서 innerHTML을 통해 Hello world!!를 Hi라고 변경해준 것이다. 즉, document라는 객체가 자바스크립트와 HTML을 서로 이어주는 역할을 하는 것으로 자바스크립트에서는 document객체를 이용해 HTML파일의 원하는 element를 불러오고 추가하고 또 element의 항목까지 수정할 수가 있다. 또한 className으로 찾고 싶으면 getElementsByClassName, name으로 찾고 싶으면 getElementsByName 그리고 아래와 같이 querySelector을 이용해서 css에서의 표현처럼 id, class 등 html의 모든 element들을 대상으로 찾아서 원하는대로 바꿔줄 수도 있다.
 
 ```javascript
 const ex = document.querySelector("#hello");
@@ -239,7 +238,7 @@ ex.style.color = "red";
 document.title = "wow";
 ```
 
-getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelctor을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다.
+getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelector을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다. 그런데 querySelector을 이용할 경우 selector 안의 조건에 부합하는 여러 element들이 있을 때 그 중 가장 첫번째 element만 가져온다는 특징이 있다. 따라서 조건에 부합하는 모든 element들을 가져오고 싶은 경우에는 querySelectorAll을 이용하면 된다.
 
 
 ## <br><br>이벤트 & 이벤트 핸들러
