@@ -290,7 +290,7 @@ function init() {
 
 init();
 ```
-JavasCript에는 click 외에도 다양한 이벤트들이 있는데 무슨 이벤트가 있는지 알고 싶으면 https://developer.mozilla.org/ko/docs/Web/Events 로 가면 된다.<br>
+JavasCript에는 click 외에도 다양한 이벤트들이 있는데 무슨 이벤트가 있는지 알고 싶으면 https://developer.mozilla.org/ko/docs/Web/Events 로 가면 된다. 또는 console.dir(document); 라는 코드를 작성해서 콘솔창에서 나오는 결과를 펼친다음 on으로 시작하는 이벤트들을 쭉 볼 수가 있다. <br>
 지금까지 JavaScript코드를 보면 HTML, CSS에서 할 일까지 너무 다하고 있는데 이건 그렇게 좋지 않은 방식이다. JavaScript에서는 로직을 처리하게 하는 것이 좋다.
 
 CSS파일을 이렇게 만들어 주고
