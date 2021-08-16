@@ -20,6 +20,6 @@
 |style|css를 사용할 수 있도록 함|
 |div|다른 태그들과 다르게 별다른 의미를 가지고 있지 않고 레이아웃을 나누는데 사용된다.|
 |form|정보를 입력할 때 그것들을 전부 감싸는 태그, name(form의 이름), action(form이 전송되는 서버 url), method(get, post같은 전송 방식), target(action에서 지정한 주소창을 새로운 창으로 열기) 등의 속성과 함께 사용됨|
-|input|form태그 내부의 태그로 type(입력형식)속성과 함께 쓰인다. type 값으로는 "text", "password", "button", "submit", "hidden" 등이 있다.|
+|input|form태그 내부의 태그로 type(입력형식)속성과 함께 쓰인다. type 값으로는 "text", "password", "button", "submit", "hidden" 등이 있다. type 외에도 required, maxlength, placeholder 등의 속성이 있는데 예를 들어<br>```<input required maxlength="10" type="text" placeholder = "아이디를 입력해주세요"/>``` 이렇게 하면 type이 text이고 필수로 작성(required)해야 하고 최대 10자까지 밖에 못치게 되며(maxlength="10"), 작성란에 무언가를 입력하기 전에 "아이디를 입력해주세요" 라는 문구가 표시된다.|
 |textarea|여러줄의 텍스트를 입력할 때 사용됨|
 |select|드롭 다운 형식의 선택 항목을 만들 때 사용됨|
