@@ -253,7 +253,7 @@ function func() {
 window.addEventListener("resize", func());
 ```
 
-위의 HTML파일과 아래의 JavaScript파일을 같이 이용하면 Id가 hello인 부분 즉, 여기서는 Hello world!!부분을 클릭할 때마다 이벤트가 발생한다.
+위의 HTML파일과 아래의 JavaScript파일을 같이 이용하면 Id가 hello인 부분 즉, 여기서는 Hello world!!부분을 클릭할 때마다 이벤트가 발생한다. 또한 아래의 코드에서 isClicked함수의 매개변수로 event가 있는데 이와 같이 모든 이벤트리스너 함수의 첫번째 인자(명칭은 아무렇게 해도 상관없으나 관례상 event라고 많이 씀)로는 이벤트가 발생하면서 생긴 정보들이 담겨지게 된다. 이벤트리스너 함수의 첫번째 인자는 필요하다면 아래와 같이 작성해주면 되고 필요가 없다면 굳이 작성해주지 않아도 된다.
 ```javascript
 const ex = document.querySelector("#hello");
 
