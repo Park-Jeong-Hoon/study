@@ -238,7 +238,23 @@ ex.style.color = "red";
 document.title = "wow";
 ```
 
-getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelector을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다. 그런데 querySelector을 이용할 경우 selector 안의 조건에 부합하는 여러 element들이 있을 때 그 중 가장 첫번째 element만 가져온다는 특징이 있다. 따라서 조건에 부합하는 모든 element들을 가져오고 싶은 경우에는 querySelectorAll을 이용하면 된다.
+getElemntById를 이용하면 Id로만 찾을 수 있지만 querySelector을 이용하면 보다 많은 선택자를 이용해 찾을 수 있다는 점에서 더욱 편리하고 유용한 것 같다. 그런데 querySelector을 이용할 경우 selector 안의 조건에 부합하는 여러 element들이 있을 때 그 중 가장 첫번째 element만 가져온다는 특징이 있다. 따라서 조건에 부합하는 모든 element들을 가져오고 싶은 경우에는 querySelectorAll을 이용하면 된다.<br><br>
+querySelector은 다양한 방법으로 사용할 수 있는데 그 중 크게 몇가지를 예시로 들어보면 아래와 같다.<br>
+
+<br>ex1) 선택자 하나만 이용해서 찾기
+```javascript
+const ex = document.querySelector("#hello");
+```
+
+<br>ex2) 부모 태그 안에 여러개의 자식 태그들이 있을 때 특정 태그를 선택하고 싶을 때
+```javascript
+const ex = document.querySelector("h1 #hello"); //선택자 사이에 공백이 들어간다.
+```
+
+<br>ex3) 같은 이름의 태그가 여러개 있고 각자 id나 class명이 다를 때 특정 태그를 선택하고 싶을 때
+```javascript
+const ex = document.querySelector("h1#hello"); //선택자 사이에 공백이 없다.
+```
 
 
 ## <br><br>이벤트 & 이벤트 핸들러
