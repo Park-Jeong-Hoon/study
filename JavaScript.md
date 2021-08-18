@@ -203,6 +203,20 @@ console.log(mulResult);
 console.log(divResult);
 ```
 
+<br>*Math모듈의 random함수*<br>
+javascript에서는 random함수를 이용해서 난수를 생성할 수 있다. random함수를 이용하면 0과 1사이의 수를 랜덤할 수가 있다. 또한 이를 응용해서 더욱 다양한 범위의 값들을 나타낼 수 있다.
+```javascript
+console.log(Math.random()); //0~1사이의 난수
+console.log(Math.random() * 10); //0~10 사이의 난수
+```
+
+또한 ceil, round, floor 함수를 이용해서 숫자의 소수점 아래 부분을 올림(ceil), 반올림(round), 버림(floor)하여 정수 형태로 나타낼 수 있다.
+```javascript
+console.log(Math.ceil(10.3)); //올림 결과:11
+console.log(Math.round(10.3)); //반올림 결과:10
+console.log(Math.floor(10.3)); //버림 결과:10
+```
+
 ## <br><br>DOM(Document Object Model)<br>
 JavaScript는 HTML과 함께 쓰일 수 있다. HTML파일과 JavaScript파일이 각각 아래와 같다고 할 때<br>
 
