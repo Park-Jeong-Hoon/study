@@ -270,6 +270,13 @@ const ex = document.querySelector("h1 #hello"); //선택자 사이에 공백이 
 const ex = document.querySelector("h1#hello"); //선택자 사이에 공백이 없다.
 ```
 
+<br> *createElement*
+<br>자바스크립트에서는 위처럼 HTML파일에 있는 element를 가져올 수도 있지만 새로운 element를 만들어서 HTML파일에 추가해줄 수도 있다. 그 때 사용하는 것이 바로 createElement이다. 
+```javascript
+const htag = document.createElement("h"); //h 태그를 생성한다.
+document.body.appendChild(htag); //body에 h태그를 추가해준다.
+```
+
 
 ## <br><br>이벤트 & 이벤트 핸들러
 보통 함수를 호출할 때 함수 이름이 func라면 func()라고 호출을 하는데 이벤트 핸들러 함수의 경우에는 func라고 호출한다. 왜냐하면 func()는 함수를 즉시 호출한다는 의미이고 func는 함수를 필요한시점에, 즉 아래 코드에서는 window.addEventListener("resize", func)의 경우에는 화면에 변화를 주는 시점에만 호출을 한다는 의미이다. 만약 이 부분에서 func를 func()로 바꿔주고 콘솔창을 보면 웹페이지를 처음 열었을 때만 func함수가 호출되고 사이즈의 변화를 줄 때는 정작 호출이 안된다. 하지만 func()로 바꿔주면 사이즈의 변화를 줄 때만 호출이 된다.
