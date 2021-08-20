@@ -202,6 +202,28 @@ console.log(minusResult);
 console.log(mulResult);
 console.log(divResult);
 ```
+<br>*forEach*<br>
+forEach를 이용하면 한 배열에 대해 배열의 모든 요소에 대해 각각 같은 함수를 실행할 수가 있다.
+```javascript
+function func() {
+    console.log("Hello");
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+numbers.forEach(func); //numbers배열의 요소 개수만큼 "Hello" 가 출력됨.
+```
+
+<br>forEach안에 들어가는 함수의 첫번째 인자는 배열의 각 요소이다. 즉, 아래 코드에서 func함수의 인자로 item이 있는데 이 item은 forEach로 배열의 각 요소마다 함수를 실행시켜 줄 때 각 요소(아래 함수에서는 a, b, c)를 의미하는 것이다. 따라서 아래 함수를 실행시키면 배열의 모든 요소 a, b, c에 대해 함수가 실행되기 때문에"Hello a", "Hello b", "Hello c"가 된다.
+```javascript
+function func(item) {
+    console.log("Hello " + item);
+}
+
+const arr = ["a", "b", "c"];
+
+arr.forEach(func);
+```
 
 <br>*Math모듈의 random함수*<br>
 javascript에서는 random함수를 이용해서 난수를 생성할 수 있다. random함수를 이용하면 0과 1사이의 수를 랜덤할 수가 있다. 또한 이를 응용해서 더욱 다양한 범위의 값들을 나타낼 수 있다.
