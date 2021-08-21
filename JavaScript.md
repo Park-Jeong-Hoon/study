@@ -225,6 +225,14 @@ const arr = ["a", "b", "c"];
 arr.forEach(func);
 ```
 
+<br>*arrow function*<br>
+또한 위의 코드는 아래와 같이 arrow function을 이용해서 별도의 함수를 만들 필요 없이 더욱 간단히 구현할 수가 있다.
+```javascript
+const arr = ["a", "b", "c"];
+
+arr.forEach((item) => console.log("Hello " + item));
+```
+
 <br>*Math모듈의 random함수*<br>
 javascript에서는 random함수를 이용해서 난수를 생성할 수 있다. random함수를 이용하면 0과 1사이의 수를 랜덤할 수가 있다. 또한 이를 응용해서 더욱 다양한 범위의 값들을 나타낼 수 있다.
 ```javascript
