@@ -32,9 +32,26 @@ css 적용방법 2가지<br>
 </html>
 ```
 
-*선택자 우선순위 : id 선택자 > class 선택자 > tag 선택자*<br>
+*선택자 우선순위 : id 선택자 > class 선택자 > tag 선택자*<br><br>
 
-CSS 박스모델<br>
+*선택자 형태&기능* <br>
+|형태|기능|
+|--|--|
+|tagName|tag 선택자로 표기된 tag명과 같은 tag를 모두 찾는 것이다. 이 외에도 h1~h7, ul, li, div 등 많은 태그들이 쓰인다.|
+|.className|class 선택자로 .을 먼저 표기한다음 클래스명을 적어주는 형태로 .뒤에 나온 클래스명과 같은 클래스를 가지고 있는 elemet들을 찾는다.|
+|#idName|id 선택자로 #뒤에 나오는 id명과 같은 id를 가지고 있는 element들을 찾는다.|
+|tagA tagB| tagA(부모태그) 안에 있는 tagB(자식태그)를 찾는다. 이 외에도 #idName tagName, .className tagName, .className .className 등 이런 식으로 tag, class, id를 모두 조합해서 사용 가능하다.|
+|tagName.className|예를 들어 a.hello 라고 하면 a태그이면서 클래스명이 hello인 element를 찾는 것이다.|
+|tagA, tagB, tagC|태그명이 tagA 또는 tagB 또는 tagC인 태그들을 한번에 다 찾는 것이다.|
+| * |모든 element들을 한번에 다 찾는 것이다.|
+| tagA * |tagA 태그를 부모태그로 하는 모든 태그들을 찾는다.|
+|tagA + tagB|태그명이 tagA인 태그 바로 다음으로 오는 태그명이 tagB인 태그를 모두 찾는다.|
+|tagA ~ tagB|tagA 다음으로 오는 tagB를 모두 찾는다.|
+
+
+<br>
+
+>## CSS 박스모델<br>
 아래 코드를 실행 시 h1태그로 감싸준 단어는 단어가 속해있는 라인 전체가, a태그로 감싸준 단어는 단어부분만 박스가 감싼다. 이는 h1태그는 block level element, a태그는 inline element 이기 때문이다. 
 ```html
 <!DOCTYPE HTML>
@@ -116,7 +133,7 @@ padding을 이용해 박스와 박스 속 단어 사이의 간격을 조절할 �
         }
 ```
 
-그리드<br>
+>## 그리드<br>
 Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠주고 싶을 때 아래 코드와 같이 하면 된다.
 ```html
 <!DOCTYPE HTML>
@@ -145,7 +162,7 @@ Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠�
 </html>
 ```
 
-<br>미디어쿼리 -> @media를 이용해서 반응형 웹사이트를 만들 수가 있다.<br>
+>## 미디어쿼리 -> @media를 이용해서 반응형 웹사이트를 만들 수가 있다.<br>
 아래 코드를 실행 시켜주면 웹페이지의 가로 크기에 변화를 주다보면 500px 이하일 때는 '반응형 웹사이트'라는 문구와 이를 둘러싼 테두리가 보이지 않게 된다.
 ```html
 <!DOCTYPE HTML>
