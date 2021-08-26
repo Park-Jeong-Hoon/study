@@ -67,6 +67,15 @@ position 속성
 |sticky|원래 있던 자리에 있으면서 스크롤링 해도 계속 그 자리가 유지가 되도록 한다.|
 <br>
 
+
+*flexbox정리*<br>
+flex-dircetion : 중심축 결정 row면 수평축, column이면 수직축이 중심축이고 아이템들도 이 중심축을 따라 정렬<br>
+flex-wrap : 한 줄이 가득 찼을 경우 다음 줄로 넘어가게 할지(wrap) 안할지(nowrap)를 결정<br>
+flex-flow : flex-dirction과 flex-wrap을 한번에 묶어서 결정<br>
+justify-content : 중심축에서 아이템들을 어떻게 배치할지 결정<br>
+align-items : 반대축에서 아이템들을 어떻게 배치할지 결정<br>
+<br><br>
+
 >## CSS 박스모델<br>
 아래 코드를 실행 시 h1태그로 감싸준 단어는 단어가 속해있는 라인 전체가, a태그로 감싸준 단어는 단어부분만 박스가 감싼다. 이는 h1태그는 block level element, a태그는 inline element 이기 때문이다. 
 ```html
