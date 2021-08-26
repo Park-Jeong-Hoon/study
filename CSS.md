@@ -47,8 +47,24 @@ css 적용방법 2가지<br>
 | tagA * |tagA 태그를 부모태그로 하는 모든 태그들을 찾는다.|
 |tagA + tagB|태그명이 tagA인 태그 바로 다음으로 오는 태그명이 tagB인 태그를 모두 찾는다.|
 |tagA ~ tagB|tagA 다음으로 오는 tagB를 모두 찾는다.|
+<br>
 
+display 속성
+|속성값|기능|
+|--|--|
+|inline|한줄에 내용들을 나타내며 태그 안에 내용 자체를 꾸며주는 것이기에 안에 내용이 없으면 아무것도 나타나지 않는다.|
+|inline-block|width, height같이 지정한 속성을 고려하면서 한줄에 내용들을 나타낸다.|
+|block|한줄에 내용 하나를 나타낸다.|
+<br>
 
+position 속성
+|속성값|기능|
+|--|--|
+|static|기본값이면서 html에 정의된 순서대로 브라우저상에 보여짐.|
+|relative|element가 원래 위치했던 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
+|absolute|element의 가장 가까운 부모 element가 위치하는 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
+|fixed|window를 기준으로 사용자가 지정한 width, height 만큼 이동|
+|sticky|원래 있던 자리에 있으면서 스크롤링 해도 계속 그 자리가 유지가 되도록 한다.|
 <br>
 
 >## CSS 박스모델<br>
