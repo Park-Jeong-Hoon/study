@@ -65,8 +65,8 @@ const num = 47;
 const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
 ```
 
-## <br><br>객체
-<br>객체 생성&출력
+## <br><br>객체<br>
+- 객체 생성&출력
 ```javascript
 const kimInfo = { //이렇게 객체를 만든다.
     name: "Kim",  //안에는 속성들이 있다.
@@ -77,7 +77,7 @@ const kimInfo = { //이렇게 객체를 만든다.
 console.log(kimInfo); //객체를 한번에 출력
 ```
 
-<br>객체의 속성 접근&수정&추가
+- 객체의 속성 접근&수정&추가
 ```javascript
 const kimInfo = {
     name: "Kim",
@@ -94,7 +94,7 @@ kimInfo.nationality = "Korea"; //이렇게 새로운 속성을 추가할 수도 
 console.log(kimInfo.age); //객체의 원하는 속성값만 출력
 ```
 
-<br>객체 속 배열&객체
+- 객체 속 배열&객체
 ```javascript
 const davidInfo = {
     name: "David",
@@ -114,7 +114,24 @@ const davidInfo = {
     ]
 }
 ```
-console.log()에서 console 역시 객체이고 log는 console이라는 객체가 가지고 있는 함수이다.
+console.log()에서 console 역시 객체이고 log는 console이라는 객체가 가지고 있는 함수이다.<br>
+
+- 객체 공유<br>
+아래 코드 같이 하면 a, obj는 같은 객체를 공유하게 되어서 a에서 속성의 값을 바꾸어도 obj로 호출했을 때 바뀐 값을 얻게 되고 obj에서 속성의 값을 바꾸어도 a로 호출했을 때 바뀐 값을 얻을 수 있다.
+```javascript
+const obj = {
+    name:"name",
+    hobby:"hobby"
+};
+
+console.log(obj.hobby); //hobby 출력
+
+const a = obj;
+
+a.hobby = "soccer";
+
+console.log(obj.hobby); //soccer 출력
+```
 
 ## <br><br>함수
 <br>함수 작성 방법
