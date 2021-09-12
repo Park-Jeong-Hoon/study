@@ -89,6 +89,33 @@ console.log(a.name, a.age); //객체를 통해 필드에 접근
 a.func(); //객체를 통해 메소드에 접근
 ```
 
+- Getter & Setter
+```javascript
+class A {
+    //생성자
+    constructor(name) {
+        //필드
+        this.name = name;
+    }
+
+    get name() {
+        return this._name; //this.name으로 하면 계속 get을 호출하면서 오류 발생
+    }
+
+    set name(value) {
+        this._name = value; //this.name으로 하면 계속 set을 호출하면서 오류 발생
+    }
+
+    //메소드
+    func() {
+        console.log(`${this.name} hello`);
+    }
+}
+
+const a = new A("name"); //A클래스의 객체 생성
+console.log(a.name); //객체를 통해 필드에 접근
+a.func(); //객체를 통해 메소드에 접근
+```
 
 
 ## <br><br>객체<br>
