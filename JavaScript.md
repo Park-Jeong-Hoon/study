@@ -28,10 +28,12 @@ const b = 14.62; //Float
 const c = "great"; //String
 const d = true; //Boolean
 ```
+- 다양한 변수 선언 방식<br>
 let -> 재선언X, 재할당O<br>
 const -> 재선언X, 재할당X<br>
 var -> 재선언O, 재할당O<br><br>
-typeof를 이용하면 변수에 어떤 타입의 값이 들어있는지 알 수가 있다.
+
+- typeof를 이용하면 변수에 어떤 타입의 값이 들어있는지 알 수가 있다.
 ```javascript
 const a = 29;
 const b = 14.62;
@@ -64,6 +66,30 @@ const arr = [29, 14.62, "great", true]; //다양한 타입의 데이터를 담�
 const num = 47;
 const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
 ```
+
+## 클래스<br><br>
+- 클래스 선언
+```javascript
+class A {
+    //생성자
+    constructor(name, age) {
+        //필드
+        this.name = name;
+        this.age = age;
+    }
+
+    //메소드
+    func() {
+        console.log(`${this.name} hello`);
+    }
+}
+
+const a = new A("name", 15); //A클래스의 객체 생성
+console.log(a.name, a.age); //객체를 통해 필드에 접근
+a.func(); //객체를 통해 메소드에 접근
+```
+
+
 
 ## <br><br>객체<br>
 - 객체 생성&출력
@@ -219,7 +245,7 @@ console.log(minusResult);
 console.log(mulResult);
 console.log(divResult);
 ```
-<br>*forEach*<br>
+- *forEach*<br>
 forEach를 이용하면 한 배열에 대해 배열의 모든 요소에 대해 각각 같은 함수를 실행할 수가 있다.
 ```javascript
 function func() {
