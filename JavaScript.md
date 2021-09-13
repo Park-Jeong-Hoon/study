@@ -130,6 +130,23 @@ console.log(a.name); //"david" 출력
 console.log(a.age); //접근 할 수 없어서 undefined라고 출력된다.
 ```
 
+- static<br>
+static 필드나 메서드는 각 객체마다 만들어 지는 것이 아니라 클래스가 가지고 있는 고유한 값이라 객체가 아닌 클래스로 접근할 수 있다.
+```javascript
+class A {
+    static name = "david"; //public 필드
+    
+    static func() {
+        console.log(`Hello ${this.name}`);
+    }
+}
+
+console.log(A.name); //"david" 출력
+A.func();
+
+//static이 붙은 필드나 메서드는 따로 생성한 객체가 아닌 클래스로 접근할 수 있다.
+```
+
 
 ## <br><br>객체<br>
 - 객체 생성&출력
