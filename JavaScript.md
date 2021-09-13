@@ -147,6 +147,50 @@ A.func();
 //static이 붙은 필드나 메서드는 따로 생성한 객체가 아닌 클래스로 접근할 수 있다.
 ```
 
+- 상속
+```javascript
+class Shape {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    draw() {
+        console.log("Shape");
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+}
+
+//extends 이용해 상속
+class Rectangle extends Shape {
+    draw() { //오버라이딩
+        console.log("Rectangle");
+    }
+}
+
+class Triangle extends Shape {
+    draw() { //오버라이딩
+        super.draw(); //부모의 draw까지 호출하고 싶으면 super 이용
+        console.log("Triangle");
+    }
+    getArea() { //오버라이딩
+        return (this.width * this.height) / 2;
+    }
+}
+
+const r = new Rectangle(4, 5);
+r.draw(); //"Rectangle" 출력
+console.log(r.getArea()); //20 출력
+
+
+const t = new Triangle(4, 5);
+t.draw(); //"Shape"와 "Triangle" 출력
+console.log(t.getArea()); //10 출력
+```
+
 
 ## <br><br>객체<br>
 - 객체 생성&출력
