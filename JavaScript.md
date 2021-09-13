@@ -117,6 +117,19 @@ console.log(a.name); //객체를 통해 필드에 접근
 a.func(); //객체를 통해 메소드에 접근
 ```
 
+- public & private 필드
+```javascript
+class A {
+    name = "david"; //public 필드
+    #age = 15; //private 필드 (#이 앞에 붙는다.)
+}
+
+const a = new A();
+
+console.log(a.name); //"david" 출력
+console.log(a.age); //접근 할 수 없어서 undefined라고 출력된다.
+```
+
 
 ## <br><br>객체<br>
 - 객체 생성&출력
