@@ -33,3 +33,20 @@
   - package-lock.json은 패키지들을 안전하게 관리해준다. 즉 다른 사람이 프로젝트를 받아 npm i 명령어를 쳤을 때 그 사람도 같은 버전의 모듈을 설치할 수 있게 된다.
 - 참고로 package.json에서 express dependencies가 존재한다면 npm i만 쳐도 node_modules와 package-lock.json 파일이 설치되면서 node_modules안에는 express와 express가 의존하는 패키지들이 들어있도록 설치가 된다. 이것 역시 npm이 package.json파일에서 dependencies를 보고 그 안에 있는 모듈들을 알아서 설치하는 것이다.
 - npm i 명령어만 치면 npm이 package.json파일의 dependencies를 보고 필요한 모듈들을 알아서 설치해주므로 용량이 큰 node_modules는 깃허브에 올리지 않아도 된다. 깃허브에 안올리려면 .gitignore 파일을 만든 다음 /node_modules라고 치면 된다.
+
+## Babel
+- 작성한 자바스크립트 코드를 NodeJS가 이해할 수 있는 자바스크립트로 바꾸는 것이다.
+- npm install --save-dev @babel/core 명령어를 이용해서 설치할 수 있다.
+- 설치한 후
+  - package.json을 열어보면 devDependencies안에 @babel/core가 들어가 있는 것을 볼 수가 있다.
+  - 그냥 dependencies는 프로젝트에 필요한 것들을 나타내고 devDependencies는 개발자(사람)에게 필요한 dependencies이다.
+  - 프로젝트에 express가 필요하기 때문에 dependencies에 express가 들어가고 개발자가 최신 문법의 코드를 작성하려면 babel이 필요하기 때문에 devDependencies에 babel이 들어간다.
+  - package.json은 텍스트 파일로 dependencies나 devDependencies같은 구분은 어떤 패키지가 무슨 역할을 하는지 알 수 있도록 사람을 위한 것이다. 어차피 node_modules안에 필요한 것들이 설치가 되어있다.
+  - 참고로 babel을 설치 할 때 --save-dev를 사용했기에 babel이 devDependencies에 들어간 것이고 이를 사용하지 않으면 dependencies에 들어간다. 하지만 그렇다 해도 package.json을 수정해주면 되므로 상관없다.
+  - 설치완료 후에는 babel.config.json이라는 설정 파일을 만들어주고 npm install @babel/preset-env --save-dev 명령어를 쳐서 devDependencies에 @babel/preset-env가 들어온지 본 다음 babel.config.json파일에 {"presets": ["@babel/preset-env"]} 라는 코드를 작성한다.
+    - preset은 babel을 위한 거대한 플러그인이다. preset-env는 그 중 하나이며 이를 이용하면 최신 자바스크립트 구문을 사용할 수가 있다.
+  - 그 다음에는 npm install @babel/node --save/dev 명령어를 쳐서 @babel/node를 설치한다.
+  - 그 다음에는 package.js에서 scripts를 "dev": "babel-node index.js"로 수정한다.
+  - 그리고 나서 명령창에 npm run dev라고 치면 정상 작동한다. 그런데 파일을 수정 할 때마다 이 명령어를 쳐야한다는 번거로움이 있다. 이를 해결하기 위해서 사용하는 것이 nodemon이다. npm install nodemon --save-dev 명령어를 쳐서 nodemon을 설치한다. nodemon은 개발자가 수정하는 것을 알아차린다. 이렇게 되면 개발자는 파일을 수정한 후 굳이 npm run dev 명령어를 칠 필요가 없다.
+  - nodemon을 설치하고 나서 package.js파일에서 scripts를 "dev": "nodemon --exec babel-node index.js"로 수정한다.
+  - 그 다음 npm run dev 명령어를 치면 실행이 되고 콘솔 창이 종료되지 않는다. 그 이후로 파일을 수정할 때마다 알아서 실행이 된다. 종료를 하려면 ctrl+c를 누르면 된다.
