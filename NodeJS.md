@@ -56,3 +56,8 @@
 - 서버는 request를 기다리고 응답한다.
 - 위에서 setup이 종료되면 이제 JS파일에 신경을 써야 한다. express를 import하려면 ```import express from "express"; ``` 라고 하면 된다. 이는 express 패키지를 express라는 이름으로 import 한다는 의미이다. express application을 만드려면 ```const app = express()``` 라는 코드를 작성해주면 된다.
 - ```app.listen(4000, func(함수명))``` 라고 코드를 작성하면 서버가 4000port를 listening 하게 되고 함수가 구현이 되있으면 서버를 만들게 되는 것이다.
+- application 설정에 관한 코드는 application을 만든코드 ```const app = express()``` 와 외부 접속을 listen하는 코드 ```app.listen(4000, func(함수명))``` 사이에 작성을 해야 한다.
+- /은 서버의 root, 첫 페이지이다.
+- GET은 HTTP method로 유저가 원하는 페이지를 갖다 달라고 부탁하는 것이다.
+- ```app.get("/", func(함수명))``` 코드는 유저가 root page로 get request를 보내면 func라는 함수로 답하는 것이다.
+- ```app.get("/", func(함수명))``` 에서 func에는 request, response 객체가 있다. 즉 ``` const func = (request, response) => {함수내용} ``` 이다.
