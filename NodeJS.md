@@ -61,6 +61,7 @@
 - GET은 HTTP method로 유저가 원하는 페이지를 갖다 달라고 부탁하는 것이다.
 - ```app.get("/", func(함수명))``` 코드는 유저가 root page로 get request를 보내면 func라는 함수로 답하는 것이다.
 - ```app.get("/", func(함수명))``` 에서 func에는 request, response 객체가 있다. 즉 ``` const func = (request, response) => {함수내용} ``` 이다.
+  - ```{함수내용}```에서 ```response.end()``` 를 해주면 서버가 request를 끝내도록 하고 ```res.send("bye")``` 를 해주면 메시지를 화면에 나타내면서 request를 끝낼 수 있다.
 
 ## <br> 미들웨어
 - request와 response 사이에 있는 소프트웨어
