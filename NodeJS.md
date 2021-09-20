@@ -71,3 +71,8 @@
   - one에서 next를 이용해야 미들웨어가 되면서 one의 다음 함수인 two가 호출이 되고 이용하지 않는다면 파이널웨어가 되버려 two가 호출되지 않는다.
   - 이렇게 get을 이용하면 미들웨어가 위에서 지정한 "/" route에만 적용이 된다.
 - ```app.use(middlefunc(미들웨어로 사용할 함수 명))``` 이 코드를 모든 get 보다 위에 작성해주면 모든 route에 미들웨어가 적용이 된다.
+
+## <br> morgan
+- node.js 용 request logger middleware
+- ```npm i morgan``` 명령어를 이용해 설치한다.
+- ```import morgan from "morgan";``` 코드를 작성해야 사용할 수 있다.
