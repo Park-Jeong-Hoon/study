@@ -75,4 +75,7 @@
 ## <br> morgan
 - node.js 용 request logger middleware
 - ```npm i morgan``` 명령어를 이용해 설치한다.
-- ```import morgan from "morgan";``` 코드를 작성해야 사용할 수 있다.
+- 사용방법
+  1. ```import morgan from "morgan";``` 코드를 작성해서 morgan 패키지를 import한다.
+  2. ```app.use(morgan("dev"));``` 코드를 작성하면 앞에서 직접 만들었던 미들웨어 함수같이 동작하는데 더 섬세하게 동작한다.
+- morgan 역시 next가 있다.
