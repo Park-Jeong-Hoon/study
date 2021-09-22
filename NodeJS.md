@@ -79,3 +79,11 @@
   1. ```import morgan from "morgan";``` 코드를 작성해서 morgan 패키지를 import한다.
   2. ```app.use(morgan("dev"));``` 코드를 작성하면 앞에서 직접 만들었던 미들웨어 함수같이 동작하는데 더 섬세하게 동작한다.
 - morgan 역시 next가 있다.
+
+## <br> Router
+- 라우터는 작업중인 주제를 기반으로 URL을 그룹화해준다.
+- 사용방법
+  1. ```const globalRouter = express.Router();```, ```const menuRouter = express.Router();``` 와 같은 코드를 작성하면 라우터를 만들 수 있다.
+  2. ```app.use("/", globalRouter);```, ```app.use("/menu", globalRouter);``` 와 같은 코드를 작성하면 라우터를 사용할 수 있게 된다.
+  3. ```globalRouter.get("/", func1(함수명));``` 코드를 작성하면 "/"에 접속했을 때 func1를 이용해 응답을 해준다.
+  4. ```menuRouter.get("/goods", func2(함수명));``` 코드를 작성하면 "/menu/goods"에 접속했을 때 func2를 이용해 응답을 해준다.
