@@ -82,6 +82,7 @@
 
 ## <br> Router
 - 라우터는 작업중인 주제를 기반으로 URL을 그룹화해준다.
+  - 공통 시작 부분을 기반으로 url을 정리해주는 것이다.
 - 사용방법
   1. ```const globalRouter = express.Router();```, ```const menuRouter = express.Router();``` 와 같은 코드를 작성하면 라우터를 만들 수 있다.
   2. ```app.use("/", globalRouter);```, ```app.use("/menu", globalRouter);``` 와 같은 코드를 작성하면 라우터를 사용할 수 있게 된다.
