@@ -100,4 +100,8 @@
 
 ## <br> PUG
 - html을 리턴하려면 Controller에서 respond.send안에 html코드를 작성해서 리턴해줄 수 있다. 하지만 이렇게 하면 너무 작업이 번거로워지고 수정하기도 힘들다. 따라서 html을 좀 더 간편하게 리턴해주기 위해 사용하는 것이 PUG라는 템플릿 엔진이다.
-- ```npm i pug``` 명령어를 이용해 설치한다.
+- 사용방법
+  1. ```npm i pug``` 명령어를 이용해 설치한다.
+  2. ```app.set("view engine", "pug");``` 코드를 작성해서 뷰엔진을 pug로 설정한다.
+  3. pug파일을 생성해 원하는 내용을 작성한다.
+  4. Controller에서 ```respond.render(pug파일명)``` 코드 같이 respond 객체의 render을 이용해 pug파일을 렌더링 해준다.
