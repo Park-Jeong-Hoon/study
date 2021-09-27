@@ -105,3 +105,5 @@
   2. ```app.set("view engine", "pug");``` 코드를 작성해서 뷰엔진을 pug로 설정한다.
   3. pug파일을 생성해 원하는 내용을 작성한다.
   4. Controller에서 ```respond.render(pug파일명)``` 코드 같이 respond 객체의 render을 이용해 pug파일을 렌더링 해준다.
+- 코드 작성방법
+  - html파일과 비슷하지만 더 간단하게 작성할 수 있다. ```<body></body>``` 와 같이 html에서 태그를 열고 닫아줘야 하는 것에 비해 pug에서는 태그를 작성하고 그 다음 줄에 tab을 누른 다음 작성하고 따로 닫아줄 필요가 없다.
