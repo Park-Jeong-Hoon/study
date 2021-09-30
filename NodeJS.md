@@ -137,3 +137,15 @@
     - ```라우터명.post("경로", 컨트롤러명);```
   - 한 페이지로 GET, POST 모두 할 때
     - ```라우터명.route("경로").get(컨트롤러명).post(컨트롤러명);```
+
+## <br> MongoDB
+- SQL이 아닌 문서 기반 데이터베이스이며 JSON방식으로 저장할 수 있다.
+- MongoDB 홈페이지에서 알려주는 대로 설치할 수 있는데 Mac, Windows에서 각각 다른 방법으로 설치가 가능하다.
+- Windows나 Mac의 terminal을 열어서 ```mongod``` 명령어를 쳐서 설치가 잘 되어있는지 확인할 수 있다.
+- ```mongo``` 명령어를 치면 mongoDB shell과 연결을 해준다. 이렇게 되면 mongoDB 명령어를 사용할 수가 있다.
+- ```exit``` 명령어로 연결을 종료할 수 있다.
+
+## <br> mongoose
+- node.js와 mongoDB를 이어주는 다리 역할을 한다.
+- 개발자가 자바스크립트로 코드를 적으면 mongoose가 mongoDB에게 전달해준다.
+- 명령창에 ```npm i mongoose``` 라고 쳐서 설치할 수 있다.
