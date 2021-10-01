@@ -149,3 +149,32 @@
 - node.js와 mongoDB를 이어주는 다리 역할을 한다.
 - 개발자가 자바스크립트로 코드를 적으면 mongoose가 mongoDB에게 전달해준다.
 - 명령창에 ```npm i mongoose``` 라고 쳐서 설치할 수 있다.
+
+## <br> DB와의 연결
+- mongoDB, mongoose를 모두 설차한 뒤 DB와 연결을 한다.
+- 명령창에서 ```mongo``` 명령어를 쳤을 때 ```connecting to: ``` 다음으로 나오는 url이 바로 자신의 database에서 실행되고 있는 url인 것이다. 이 url을 복사하고 js파일을 새로 만든 다음 아래와 같은 코드를 작성한다.
+```javascript
+import mongoose from "mongoose";
+
+mongoose.connect("mongodb://127.0.0.1:27017/원하는이름", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+
+const funOpen = () => console.log("DB Connected");
+const funError = (err) => console.log("DB Error", err);
+
+db.on("error", funError);
+db.once("open", funOpen);
+```
+- 위의 js파일을 다 작성하면 서버관련 js파일에 ```import ./파일명``` 코드를 맨 위에 작성해준다.
+
+## <br> Model
+- DB 모델을 만들기 위해 우선 새로운 JS 파일을 생성한다.
+- ```import mongoose from "mongoose"``` 코드를 작성한다.
+- ```const 스키마변수명 = new mongoose.Schema({속성명: 자료형})``` 형태로 스키마를 정의한다.
+- ```const 모델변수명 = mongoose.model("모델명", 스키마변수명);``` 형태의 코드를 작성 뒤 ```export default 모델변수명``` 코드를 작성한다.
+- export한 모델을 DB연결 파일을 import한 곳 아래에 import 한다. 
+- 참고로 DB연결파일, 모델관련파일 등 다양한 파일들을 서버관련 파일에 import하다 보면 서버파일 양이 너무 거대해지고 복잡해질 수 있다. 따라서 특징별로 코드를 나눠 다른 파일에다가 관리하는 것이 좋으므로 DB, model 등을 import하는 내용들을 JS파일을 새로 만들어 거기에다가 옮겨주는 것도 좋은 방법이다.
