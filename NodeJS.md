@@ -182,3 +182,28 @@ db.once("open", funOpen);
 ## <br> Async, Await
 - async이 붙은 함수(asynchronous인 함수)에서 await가 붙은 코드는 동작이 정상적으로 완료될 때까지 기다려준다.
 - 특히 DB에 데이터를 저장하는 컨트롤러인 경우에는 DB에 데이터가 저장하는데 시간이 걸리기 때문에 try-catch와 함께 이를 사용해주는 것이 좋다.
+
+## <br> DB에 저장하기
+- 컨트롤러에서 데이터를 DB에 저장하는데에는 save와 create 두 가지 방식이 있다.
+- 우선 컨트롤러에 async을 붙인다.
+- save방식
+
+      const 변수명 = new 임포트한모델명({
+        속성명: 값
+      });
+      await 변수명.save();
+- create방식
+
+        await 변수명.create({
+        속성명: 값
+      });
+- save, create 모두 같은 기능을 하는데 create가 좀 더 간단하다.
+- 에러 처리를 위해 try-catch와 함께 사용할 수도 있다.
+
+      try {
+        await 변수명.create({
+            속성명: 값
+        });
+      } catch(error) {
+        에러처리 코드
+      }
