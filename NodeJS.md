@@ -153,22 +153,22 @@
 ## <br> DB와의 연결
 - mongoDB, mongoose를 모두 설차한 뒤 DB와 연결을 한다.
 - 명령창에서 ```mongo``` 명령어를 쳤을 때 ```connecting to: ``` 다음으로 나오는 url이 바로 자신의 database에서 실행되고 있는 url인 것이다. 이 url을 복사하고 js파일을 새로 만든 다음 아래와 같은 코드를 작성한다.
-```javascript
-import mongoose from "mongoose";
+  ```javascript
+  import mongoose from "mongoose";
 
-mongoose.connect("mongodb://127.0.0.1:27017/원하는이름", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+  mongoose.connect("mongodb://127.0.0.1:27017/원하는이름", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+  });
 
-const db = mongoose.connection;
+  const db = mongoose.connection;
 
-const funOpen = () => console.log("DB Connected");
-const funError = (err) => console.log("DB Error", err);
+  const funOpen = () => console.log("DB Connected");
+  const funError = (err) => console.log("DB Error", err);
 
-db.on("error", funError);
-db.once("open", funOpen);
-```
+  db.on("error", funError);
+  db.once("open", funOpen);
+  ```
 - 위의 js파일을 다 작성하면 서버관련 js파일에 ```import ./파일명``` 코드를 맨 위에 작성해준다.
 
 ## <br> Model
@@ -187,23 +187,24 @@ db.once("open", funOpen);
 - 컨트롤러에서 데이터를 DB에 저장하는데에는 save와 create 두 가지 방식이 있다.
 - 우선 컨트롤러에 async을 붙인다.
 - save방식
-
-      const 변수명 = new 임포트한모델명({
-        속성명: 값
-      });
-      await 변수명.save();
+  ```javascript
+  const 변수명 = new 임포트한모델명({
+    //속성명: 값
+  });
+  await 변수명.save();
+  ```
 - create방식
-
-        await 변수명.create({
-        속성명: 값
-      });
+  ```javascript
+  await 변수명.create({
+    //속성명: 값
+  });
 - save, create 모두 같은 기능을 하는데 create가 좀 더 간단하다.
 - 에러 처리를 위해 try-catch와 함께 사용할 수도 있다.
-
-      try {
-        await 변수명.create({
-            속성명: 값
-        });
-      } catch(error) {
-        에러처리 코드
-      }
+  ```javascript
+  try {
+    await 변수명.create({
+        //속성명: 값
+    });
+  } catch(error) {
+    //에러처리 코드
+  }
