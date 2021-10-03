@@ -157,64 +157,65 @@
     }
     ```
 
->## 그리드<br>
-Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠주고 싶을 때 아래 코드와 같이 하면 된다.
-```html
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <style>
-        #grid {
-            border: 5px solid lightpink;
-            display: grid;
-            grid-template-columns: 100px 1fr; /*앞에 100px는 첫번쨰 컬림 길이, 뒤에 1fr은 남는 공간 길이*/
-            /*grid-template-columns: 1fr 1fr; 이런식으로 해주면 비율, 1:1 (첫번째 컬럼:두번째 컬럼)*/
-        }
-        div {
-            border: 5px solid skyblue;
-        }
-    </style>
-</head>
-<body>
-<div id="grid"> <!--Korea, 대한민국을 나란히 놓기 위한 부모 태그-->
-    <div>Korea</div> <!--의미 없는 태그, 오로지 디자인을 위함 -->
-    <div>대한민국</div>
-</div>
-</body>
-</html>
-```
+## <br>그리드
+- Korea, 대한민국 두 단어를 수평으로 나열하면서 표처럼 나눠주고 싶을 때 아래 코드와 같이 하면 된다.
+  ```html
+  <!DOCTYPE HTML>
+  <html>
+  <head>
+      <title></title>
+      <meta charset="UTF-8">
+      <style>
+          #grid {
+              border: 5px solid lightpink;
+              display: grid;
+              grid-template-columns: 100px 1fr; /*앞에 100px는 첫번쨰 컬림 길이, 뒤에 1fr은 남는 공간 길이*/
+              /*grid-template-columns: 1fr 1fr; 이런식으로 해주면 비율, 1:1 (첫번째 컬럼:두번째 컬럼)*/
+          }
+          div {
+              border: 5px solid skyblue;
+          }
+      </style>
+  </head>
+  <body>
+  <div id="grid"> <!--Korea, 대한민국을 나란히 놓기 위한 부모 태그-->
+      <div>Korea</div> <!--의미 없는 태그, 오로지 디자인을 위함 -->
+      <div>대한민국</div>
+  </div>
+  </body>
+  </html>
+  ```
 
->## 미디어쿼리 -> @media를 이용해서 반응형 웹사이트를 만들 수가 있다.<br>
-아래 코드를 실행 시켜주면 웹페이지의 가로 크기에 변화를 주다보면 500px 이하일 때는 '반응형 웹사이트'라는 문구와 이를 둘러싼 테두리가 보이지 않게 된다.
-```html
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <style>
-        div {
-            border: 10px solid black;
-            font-size: 50px;
-        }
-        @media (max-width: 500px) {
-            div {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-<div>
-    반응형 웹사이트
-</div>
-</body>
-</html>
-```
+## <br>미디어쿼리
+- @media를 이용해서 반응형 웹사이트를 만들 수가 있다.
+- 아래 코드를 실행 시켜주면 웹페이지의 가로 크기에 변화를 주다보면 500px 이하일 때는 '반응형 웹사이트'라는 문구와 이를 둘러싼 테두리가 보이지 않게 된다.
+  ```html
+  <!DOCTYPE HTML>
+  <html>
+  <head>
+      <title></title>
+      <meta charset="UTF-8">
+      <style>
+          div {
+              border: 10px solid black;
+              font-size: 50px;
+          }
+          @media (max-width: 500px) {
+              div {
+                  display: none;
+              }
+          }
+      </style>
+  </head>
+  <body>
+  <div>
+      반응형 웹사이트
+  </div>
+  </body>
+  </html>
+  ```
 
-<br>style태그 안에 있는 CSS코드를 css파일을 별도로 만들어 거기에 저장해서 같은 CSS를 여러 파일에 적용할 수가 있다. css파일을 다른 파일에서 이용하려면 head태그 안에 아래의 코드를 작성하면 된다. (css파일명이 style 일 경우를 예시로 듬)
-```html
-<link rel="stylesheet" href="style.css">
-```
+- style태그 안에 있는 CSS코드를 css파일을 별도로 만들어 거기에 저장해서 같은 CSS를 여러 파일에 적용할 수가 있다. css파일을 다른 파일에서 이용하려면 head태그 안에 아래의 코드를 작성하면 된다. (css파일명이 style 일 경우를 예시로 듬)
+  ```html
+  <link rel="stylesheet" href="style.css">
+  ```
