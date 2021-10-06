@@ -149,6 +149,7 @@
 - node.js와 mongoDB를 이어주는 다리 역할을 한다.
 - 개발자가 자바스크립트로 코드를 적으면 mongoose가 mongoDB에게 전달해준다.
 - 명령창에 ```npm i mongoose``` 라고 쳐서 설치할 수 있다.
+- mongoose를 이용해 find, findById 등과 같이 model로 CRUD 기능을 수행하는 다양한 함수를 사용할 수 있다.
 
 ## <br> DB와의 연결
 - mongoDB, mongoose를 모두 설차한 뒤 DB와 연결을 한다.
@@ -208,3 +209,29 @@
   } catch(error) {
     //에러처리 코드
   }
+
+## <br> Mongoose의 미들웨어
+- express에서 미들웨어가 request를 중간에서 가로채서 무언가를 한 다음 이어서 진행하는 것처럴 mongoose에서도 document에 무슨 일이 생기기 전이나 후에 미들웨어를 적용할 수 있다. 즉, 모델이 CRUD 기능을 수행하기 전,후에 미들웨어나 함수를 적용하는 것이다.
+또한 express의 미들웨어 같이 중간에 무언가를 할 뿐 흐름을 방해하지는 않는다.
+- 사용방법
+
+  모델을 만든 파일 안에서 스키마를 생성한 다음 모델을 생성하기 전의 위치에 아래와 같은 코드를 작성한다.
+  ```javascript
+  스키마명.pre("save", async function () {
+    //처리하고 싶은 코드
+  })
+  ```
+  위처럼 코드를 작성하면 여러 hook 중에서 save를 수행하기 전에 코드 작성자가 작성한 pre 안의 함수를 수행하게 된다.
+  
+## <br> Static
+- 생성한 모델을 이용해서 create, findById, findByIdAndUpdate 등의 기능을 수행할 수 있다. 하지만 이들은 모두 호출하는 hook가 제각각이라서 위에서 설명한 미들웨어의 pre 등의 기능으로는 한계가 있을 수 있다. 따라서 사용하는 것이 static이다. static은 create, findById 같이 모델을 통해 수행하는 함수를 개발자가 직접 만들어 주는 것이다.
+
+- static 만드는 방법
+  
+  모델을 만든 파일에서 아래와 같은 코드를 스키마를 생성한 코드 아래에 작성한다.
+  ```javascript
+  스키마명.static("원하는이름", function(필요한 매개변수) {
+    //처리하고 싶은 내용
+  });
+  ```
+  생성한 static을 이용할 때에는 create를 이용할 때와 같이 ```import한 모델명.만든static명``` 를 작성하여 이용하면 된다.
