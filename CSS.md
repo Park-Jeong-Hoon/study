@@ -37,43 +37,45 @@
 - 선택자 형태&기능
   |형태|기능|
   |--|--|
-  |tagName|tag 선택자로 표기된 tag명과 같은 tag를 모두 찾는 것이다. 이 외에도 h1~h7, ul, li, div 등 많은 태그들이 쓰인다.|
-  |.className|class 선택자로 .을 먼저 표기한다음 클래스명을 적어주는 형태로 .뒤에 나온 클래스명과 같은 클래스를 가지고 있는 elemet들을 찾는다.|
-  |#idName|id 선택자로 #뒤에 나오는 id명과 같은 id를 가지고 있는 element들을 찾는다.|
-  |tagA tagB| tagA(부모태그) 안에 있는 tagB(자식태그)를 찾는다. 이 외에도 #idName tagName, .className tagName, .className .className 등 이런 식으로 tag, class, id를 모두 조합해서 사용 가능하다.|
-  |tagName.className|예를 들어 a.hello 라고 하면 a태그이면서 클래스명이 hello인 element를 찾는 것이다.|
-  |tagA, tagB, tagC|태그명이 tagA 또는 tagB 또는 tagC인 태그들을 한번에 다 찾는 것이다.|
-  | * |모든 element들을 한번에 다 찾는 것이다.|
-  | tagA * |tagA 태그를 부모태그로 하는 모든 태그들을 찾는다.|
-  |tagA + tagB|태그명이 tagA인 태그 바로 다음으로 오는 태그명이 tagB인 태그를 모두 찾는다.|
-  |tagA ~ tagB|tagA 다음으로 오는 tagB를 모두 찾는다.|
+  |```tagName```|tag 선택자로 표기된 tag명과 같은 tag를 모두 찾는 것이다. 이 외에도 ```h1~h7```, ```ul```, ```li```, ```div``` 등 많은 태그들이 쓰인다.|
+  |```.className```|class 선택자로 ```.```을 먼저 표기한다음 클래스명을 적어주는 형태로 ```.```뒤에 나온 클래스명과 같은 클래스를 가지고 있는 elemet들을 찾는다.|
+  |```#idName```|id 선택자로 ```#```뒤에 나오는 id명과 같은 id를 가지고 있는 element들을 찾는다.|
+  |```tagA tagB```| ```tagA(부모태그)``` 안에 있는 ```tagB(자식태그)```를 찾는다. 이 외에도 ```#idName tagName```, ```.className tagName```, ```.className .className``` 등 이런 식으로 tag, class, id를 모두 조합해서 사용 가능하다.|
+  |```tagName.className```|예를 들어 ```a.hello``` 라고 하면 a태그이면서 클래스명이 hello인 element를 찾는 것이다.|
+  |```tagA, tagB, tagC```|태그명이 ```tagA``` 또는 ```tagB``` 또는 ```tagC```인 태그들을 한번에 다 찾는 것이다.|
+  |```*```|모든 element들을 한번에 다 찾는 것이다.|
+  |```tagA *```|```tagA``` 태그를 부모태그로 하는 모든 태그들을 찾는다.|
+  |```tagA + tagB```|태그명이 ```tagA```인 태그 바로 다음으로 오는 태그명이 ```tagB```인 태그를 모두 찾는다.|
+  |```tagA ~ tagB```|```tagA``` 다음으로 오는 ```tagB```를 모두 찾는다.|
 
 
 - display 속성
   |속성값|기능|
   |--|--|
-  |inline|한줄에 내용들을 나타내며 태그 안에 내용 자체를 꾸며주는 것이기에 안에 내용이 없으면 아무것도 나타나지 않는다.|
-  |inline-block|width, height같이 지정한 속성을 고려하면서 한줄에 내용들을 나타낸다.|
-  |block|한줄에 내용 하나를 나타낸다.|
+  |```inline```|한줄에 내용들을 나타내며 태그 안에 내용 자체를 꾸며주는 것이기에 안에 내용이 없으면 아무것도 나타나지 않는다.|
+  |```inline-block```|width, height같이 지정한 속성을 고려하면서 한줄에 내용들을 나타낸다.|
+  |```block```|한줄에 내용 하나를 나타낸다.|
 
 - position 속성
   |속성값|기능|
   |--|--|
-  |static|기본값이면서 html에 정의된 순서대로 브라우저상에 보여짐.|
-  |relative|element가 원래 위치했던 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
-  |absolute|element의 가장 가까운 부모 element가 위치하는 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
-  |fixed|window를 기준으로 사용자가 지정한 width, height 만큼 이동|
-  |sticky|원래 있던 자리에 있으면서 스크롤링 해도 계속 그 자리가 유지가 되도록 한다.|
+  |```static```|기본값이면서 html에 정의된 순서대로 브라우저상에 보여짐.|
+  |```relative```|element가 원래 위치했던 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
+  |```absolute```|element의 가장 가까운 부모 element가 위치하는 곳을 기준으로 사용자가 지정한 width, height 만큼 이동|
+  |```fixed```|window를 기준으로 사용자가 지정한 width, height 만큼 이동|
+  |```sticky```|원래 있던 자리에 있으면서 스크롤링 해도 계속 그 자리가 유지가 되도록 한다.|
 
 
 
-## <br>Flexbox
-  - display 값 중에 하나로 ```display: flex```로 해줘야 사용할 수 있다.
-  - flex-dircetion : 중심축 결정 row면 수평축, column이면 수직축이 중심축이고 아이템들도 이 중심축을 따라 정렬
-  - flex-wrap : 한 줄이 가득 찼을 경우 다음 줄로 넘어가게 할지(wrap) 안할지(nowrap)를 결정
-  - flex-flow : flex-dirction과 flex-wrap을 한번에 묶어서 결정
-  - justify-content : 중심축에서 아이템들을 어떻게 배치할지 결정
-  - align-items : 반대축에서 아이템들을 어떻게 배치할지 결정
+## <br>Flexbox 사용방법
+  |속성|기능|
+  |-|-|
+  |```display```|값 중에 하나로 ```display: flex```로 해줘야 사용할 수 있다.|
+  |```flex-dircetion```|중심축 결정 row면 수평축, column이면 수직축이 중심축이고 아이템들도 이 중심축을 따라 정렬|
+  |```flex-wrap```|한 줄이 가득 찼을 경우 다음 줄로 넘어가게 할지(```wrap```) 안할지(```nowrap```)를 결정|
+  |```flex-flow```|```flex-dirction```과 ```flex-wrap```을 한번에 묶어서 결정|
+  |```justify-content```|중심축에서 아이템들을 어떻게 배치할지 결정|
+  |```align-items```|반대축에서 아이템들을 어떻게 배치할지 결정|
 
 ## <br>CSS 박스모델<br>
 - 아래 코드를 실행 시 h1태그로 감싸준 단어는 단어가 속해있는 라인 전체가, a태그로 감싸준 단어는 단어부분만 박스가 감싼다. 이는 h1태그는 block level element, a태그는 inline element 이기 때문이다. 
