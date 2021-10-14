@@ -282,7 +282,7 @@
           secret: "Hello!",
           resave: true,
           saveUninitialized: true,
-          store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/wetube" }) //세션을 MongoDB database에 저장할 수 있게 된다.
+          store: MongoStore.create({ mongoUrl: "mongodb주소" }) //세션을 MongoDB database에 저장할 수 있게 된다.
         })
       );
       ```
