@@ -274,6 +274,18 @@
         })
       );
       ```
+  3. 위의 단계까지 완료하면 세션을 사용할 수가 있는데 세션을 저장할 수가 없다. 세션을 저장하기 위해서는 ```npm i connect-mongo``` 명령어를 통해 connect-mongo를 설치해야 한다.
+  4. 그 다음 2번 단계에서 작성한 코드에 mongostore에 관한 코드를 작성하여 아래와 같이 완성한다.
+      ```javascript
+      app.use(
+        session({
+          secret: "Hello!",
+          resave: true,
+          saveUninitialized: true,
+          store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/wetube" }) //세션을 MongoDB database에 저장할 수 있게 된다.
+        })
+      );
+      ```
 
 ## <br> locals
 - 미들웨어에서 locals를 이용하면 모든 pug 파일에서 locals의 변수를 이용할 수가 있다.
