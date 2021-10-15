@@ -286,6 +286,16 @@
         })
       );
       ```
+  5. resave와 saveUninitialized를 false로 바꿔주면 세션을 수정한 경우에만 세션을 DB에 저장하고 쿠키를 보내주게 된다.
+      ```javascript
+      app.use(
+        session({
+          secret: "Hello!",
+          resave: false,
+          saveUninitialized: false,
+          store: MongoStore.create({ mongoUrl: "mongodb주소" })
+        })
+      );
 
 ## <br> locals
 - 미들웨어에서 locals를 이용하면 모든 pug 파일에서 locals의 변수를 이용할 수가 있다.
