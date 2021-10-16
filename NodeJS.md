@@ -296,6 +296,22 @@
           store: MongoStore.create({ mongoUrl: "mongodb주소" })
         })
       );
+      ```
+  
+  6. maxAge는 쿠키가 얼마나 오래 있을 수 있는지 알려주는 것으로 아래 코드와 같이 이용하면 된다.
+      ```javascript
+      app.use(
+        session({
+          secret: "Hello!",
+          resave: false,
+          saveUninitialized: false,
+          cookie: {
+            maxAge: 20000 //값은 1/1000초 단위로 쓰면 된다.
+          },
+          store: MongoStore.create({ mongoUrl: "mongodb주소" })
+        })
+      );
+      ```
 
 ## <br> locals
 - 미들웨어에서 locals를 이용하면 모든 pug 파일에서 locals의 변수를 이용할 수가 있다.
