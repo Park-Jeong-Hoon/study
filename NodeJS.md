@@ -113,7 +113,7 @@
 
 ## <br> extends
 - 위에서 footer같이 동일한 내용을 여러번 작성하는 것이 번거롭다고 했듯이 동일하지 않더라도 거의 비슷한 내용의 PUG파일을 여러번 작성하는 것은 낭비다. 따라서 사용하는 것이 extends이다. 
-- 여러 페이지에 비슷한 부분이 들어가는 경우 대표적으로 사용할 pug파일(예를 들어 파일명을 base로)을 하나 만들어 내용을 작성해주고 이를 적용하고 싶은 pug파일에 ```extends base.pug``` 라고 작성해주면 된다. 이렇게 하면 base의 내용이 똑같이 적용되게 된다. 그런데 base의 내용 중 일부를 변경하고 싶다면 base.pug에서 ```block```을 이용해 base.pug를 extends한 파일에서 이 부분을 채워넣게 하면 된다. 예를 들어 base.pug에서 ```block content``` 라고 하면 base.pug를 extends한 파일에서는 ```block content```를 작성한 다음 그 다음 줄에서 tab을 하고 원하는 pug코드를 작성하면 되는 것이다.
+- 여러 페이지에 비슷한 부분이 들어가는 경우 대표적으로 사용할 pug파일(예를 들어 파일명을 base로)을 하나 만들어 내용을 작성해주고 이를 적용하고 싶은 pug파일에 ```extends base.pug``` 또는 ```extends base``` 라고 작성해주면 된다. 이렇게 하면 base의 내용이 똑같이 적용되게 된다. 그런데 base의 내용 중 일부를 변경하고 싶다면 base.pug에서 ```block```을 이용해 base.pug를 extends한 파일에서 이 부분을 채워넣게 하면 된다. 예를 들어 base.pug에서 ```block content``` 라고 하면 base.pug를 extends한 파일에서는 ```block content```를 작성한 다음 그 다음 줄에서 tab을 하고 원하는 pug코드를 작성하면 되는 것이다.
 - ```#{}``` 을 사용하면 extends한 내용에서 block 보다 더 세세한 부분까지 변경할 수 있다. 즉 예를 들어 base.pug에 ```h1 I love fruits``` 라는 부분이 있는데 이를 extends한 어느 파일에서 fruits 부분을 apple로 바꾸고 싶을 수가 있다. 이럴 경우에 base.pug에서 ```h1 I love ${변수명}```이라 작성하고 extends한 파일을 렌더링 하는 컨트롤러에서 ```res.render("extends한 파일명", {변수명:"apple"})``` 이렇게 작성해주면 된다.(res는 respond 객체)
 
 ## <br> Mixin
