@@ -20,13 +20,18 @@
 - span: ```div``` 태그와 비슷하게 레이아웃을 나누는 기능을 하는데 ```div```가 기본적으로 block-level이라서 줄바꿈을 해주는 반면 ```span```은 기본적으로 inline-level이기에 줄바꿈이 이뤄지지 않는다. 또한 ```span```의 경우에는 태그 안에 내용이 있어야 화면에 나타나고 내용이 없으면 나타나지 않는다.
 - form: 정보를 입력할 때 그것들을 전부 감싸는 태그, ```name```(form의 이름), ```action```(form이 전송되는 서버 url), ```method```(get, post같은 전송 방식), ```target```(action에서 지정한 주소창을 새로운 창으로 열기) 등의 속성과 함께 사용됨
 - input
-  - ```form```태그 내부의 태그로 ```type```(입력형식)속성과 함께 쓰인다.
-  - ```type``` 값으로는 ```"text"```, ```"password"```, ```"button"```, ```"submit"```, ```"hidden"``` 등이 있다. ```type``` 외에도 ```required```, ```maxlength```, ```placeholder``` 등의 속성이 있는데 예를 들어 ```<input required maxlength="10" type="text" placeholder = "아이디를 입력해주세요"/>``` 이렇게 하면 ```type```이 ```text```이고 필수로 작성(```required```)해야 하고 최대 10자까지 밖에 못치게 되며(```maxlength="10"```), 작성란에 무언가를 입력하기 전에 "아이디를 입력해주세요" 라는 문구가 표시된다.
-  - file타입을 이용하면 파일업로드 기능을 수행할 수가 있는데 label태그와 함께 이용하면 좀 더 원하는 디자인으로 만들 수 있다. 
+  - ```form```태그 내부의 태그로 ```type``` 속성과 함께 쓰인다.
+  - ```type``` 값으로는 ```"text"```, ```"password"```, ```"button"```, ```"submit"```, ```"hidden"```, ```"file"``` 등이 있다. ```type``` 외에도 ```required```, ```maxlength```, ```placeholder``` 등의 속성이 있는데 예를 들어 아래의 경우처럼 하면
     ```html
-    <label for="id명"></label>
-    <input type="file"id="id명"style="display: none;"/>
+    <input required maxlength="10" type="text" placeholder = "아이디를 입력해주세요"/>
     ```
-    위와 같이 작성하면 input태그는 가려지게 되면서 label 태그가 input 태그의 역할을 하게 된다.
+    ```type```이 ```text```이고 필수로 작성(```required```)해야 하고 최대 10자까지 밖에 못치게 되며(```maxlength="10"```), 작성란에 무언가를 입력하기 전에 "아이디를 입력해주세요" 라는 문구가 표시된다.
+  - 다양항 type 속성
+    - ```file``` 타입을 이용하면 파일업로드 기능을 수행할 수가 있는데 label태그와 함께 이용하면 좀 더 원하는 디자인으로 만들 수 있다. 
+      ```html
+      <label for="id명"></label>
+      <input type="file"id="id명"style="display: none;"/>
+      ```
+      위와 같이 작성하면 input태그는 가려지게 되면서 label 태그가 input 태그의 역할을 하게 된다.
 - textarea: 여러줄의 텍스트를 입력할 때 사용됨
 - select: 드롭 다운 형식의 선택 항목을 만들 때 사용됨|
