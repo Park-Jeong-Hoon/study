@@ -21,6 +21,7 @@
 - form: 정보를 입력할 때 그것들을 전부 감싸는 태그, ```name```(form의 이름), ```action```(form이 전송되는 서버 url), ```method```(get, post같은 전송 방식), ```target```(action에서 지정한 주소창을 새로운 창으로 열기) 등의 속성과 함께 사용됨
 - input
   - ```form```태그 내부의 태그로 ```type``` 속성과 함께 쓰인다.
+  - ```name``` 속성을 사용해줘야 백엔드의 컨트롤러에서 이용할 수 있다.
   - ```type``` 값으로는 ```"text"```, ```"password"```, ```"button"```, ```"submit"```, ```"hidden"```, ```"file"``` 등이 있다. ```type``` 외에도 ```required```, ```maxlength```, ```placeholder``` 등의 속성이 있는데 예를 들어 아래의 경우처럼 하면
     ```html
     <input required maxlength="10" type="text" placeholder = "아이디를 입력해주세요"/>
