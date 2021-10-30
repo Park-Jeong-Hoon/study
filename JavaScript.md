@@ -14,11 +14,11 @@
 - 다양한 변수 선언 방식
   |키워드|기능|
   |--|--|
-  |let|재선언X, 재할당O|
-  |const|재선언X, 재할당X|
-  |var|재선언O, 재할당O|
-- 가급적 let, const를 사용한다.
-- let으로 변수 선언
+  |```let```|재선언X, 재할당O|
+  |```const```|재선언X, 재할당X|
+  |```var```|재선언O, 재할당O|
+- 가급적 ```let```, ```const```를 사용한다.
+- ```let```으로 변수 선언
   ```javascript
   let a = 1;
   console.log(a); //결과 = 1, console.log()를 이용해 콘솔창에 출력 가능
@@ -63,18 +63,19 @@
   ```
 
 - 위의 코드에서 정수형 데이터를 담는 배열을 만들었는데 이외에도 다양한 데이터를 담을 수 있다.
-  ```javascript
-  const sports = ["baseball", "soccer", "volleyball", "basketball"]; //String형 데이터를 담는 배열
-  ```
-
-  ```javascript
-  const arr = [29, 14.62, "great", true]; //다양한 타입의 데이터를 담을 수도 있다.
-  ```
-
-  ```javascript
-  const num = 47;
-  const arr = [29, 14.62, "great", true, num] //이렇게 num 같이 초기화된 변수를 넣어도 된다.
-  ```
+  - String형 데이터를 담는 배열
+    ```javascript
+    const sports = ["baseball", "soccer", "volleyball", "basketball"];
+    ```
+  - 다양한 타입의 데이터를 담을 수도 있다.
+    ```javascript
+    const arr = [29, 14.62, "great", true];
+    ```
+  - 아래의 num 같이 초기화된 변수를 넣어도 된다.
+    ```javascript
+    const num = 47;
+    const arr = [29, 14.62, "great", true, num]
+    ```
 
 ## <br>클래스
 - 클래스 선언
