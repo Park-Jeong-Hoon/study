@@ -401,6 +401,20 @@ javascript에서는 random함수를 이용해서 난수를 생성할 수 있다.
   console.log(Math.floor(10.3)); //버림 결과:10
   ```
 
+- setTimeout, clearTimeout
+  - 사용방법 및 기능
+    - setTimeout
+        ```javascript
+        setTimeout(함수명, 밀리초단위의시간);
+        ```
+        첫번째 인자로 넣은 함수를 두번째 인자로 넣은 시간 후에 실행시킨다.
+    - cleaerTimeout
+        ```javascript
+        let 변수명 = setTimeout(함수명, 밀리초단위의시간);
+        clearTimeout(변수명);
+        ```
+        setTimeout함수를 변수에 할당하면 id값을 받게 된다. 이 변수를 clearTimeout의 매개변수로 넣어주면 해당 변수(id)의 setTimeout 동작을 없앤다.
+
 ## <br>DOM(Document Object Model)
 - JavaScript는 HTML과 함께 쓰일 수 있다. HTML파일과 JavaScript파일이 각각 아래와 같다고 할 때
 
