@@ -9,6 +9,7 @@
 - NodeJS를 설치하면 같이 설치됨
 - npm을 이용해 다른 사람들이 만든 패키지를 쓸 수 있음. ```npm install (패키지명)``` 또는 ```npm i (패키지명)``` 이라는 명령어로 원하는 패키지를 다운받을 수 있다.
 - 삭제하고 싶은 패키지가 있으면 ```npm uninstall (삭제할 패키지명)``` 명령어를 이용하면 된다.
+- 다양한 npm 모듈을 https://www.npmjs.com/ 에서 찾을 수 있다.
 
 ## <br>package.json
 - NodeJS 프로젝트를 할 때 가장 먼저 만들어야하는 파일로 package.json이라는 이름으로 생성해야 한다.
@@ -43,7 +44,8 @@
   - 그냥 dependencies는 프로젝트에 필요한 것들을 나타내고 devDependencies는 개발자(사람)에게 필요한 dependencies이다.
   - 프로젝트에 express가 필요하기 때문에 dependencies에 express가 들어가고 개발자가 최신 문법의 코드를 작성하려면 babel이 필요하기 때문에 devDependencies에 babel이 들어간다.
   - package.json은 텍스트 파일로 dependencies나 devDependencies같은 구분은 어떤 패키지가 무슨 역할을 하는지 알 수 있도록 사람을 위한 것이다. 어차피 node_modules안에 필요한 것들이 설치가 되어있다.
-  - 참고로 babel을 설치 할 때 ```--save-dev```를 사용했기에 babel이 devDependencies에 들어간 것이고 이를 사용하지 않으면 dependencies에 들어간다. 하지만 그렇다 해도 package.json을 수정해주면 되므로 상관없다.
+  - 참고로 babel을 설치 할 때 ```--save-dev```를 사용했기에 babel이 devDependencies에 들어간 것이고 이를 사용하지 않으면 dependencies에 들어간다.
+  - 모듈을 dependencies에 넣어었어야 했는데 devDependencies 넣었거나 devDependencies에 넣어었어야 했는데 dependencies에 넣었다면 그냥 package.json 파일에서 수동으로 옮겨 주면 된다.
   - 설치완료 후에는 babel.config.json이라는 설정 파일을 만들어주고 ```npm install @babel/preset-env --save-dev``` 명령어를 쳐서 devDependencies에 @babel/preset-env가 들어온지 본 다음 babel.config.json파일에 ```{"presets": ["@babel/preset-env"]}``` 라는 코드를 작성한다.
     - preset은 babel을 위한 거대한 플러그인이다. preset-env는 그 중 하나이며 이를 이용하면 최신 자바스크립트 구문을 사용할 수가 있다.
   - 그 다음에는 ```npm install @babel/node --save/dev``` 명령어를 쳐서 @babel/node를 설치한다.
@@ -56,13 +58,13 @@
 ## <br>서버
 - 서버는 request를 기다리고 응답한다.
 - 위에서 setup이 종료되면 이제 JS파일에 신경을 써야 한다. express를 import하려면 ```import express from "express"; ``` 라고 하면 된다. 이는 express 패키지를 express라는 이름으로 import 한다는 의미이다. express application을 만드려면 ```const app = express()``` 라는 코드를 작성해주면 된다.
-- ```app.listen(4000, func(함수명))``` 라고 코드를 작성하면 서버가 4000port를 listening 하게 되고 함수가 구현이 되있으면 서버를 만들게 되는 것이다.
-- application 설정에 관한 코드는 application을 만든코드 ```const app = express()``` 와 외부 접속을 listen하는 코드 ```app.listen(4000, func(함수명))``` 사이에 작성을 해야 한다.
+- ```app.listen(4000, 함수명)``` 라고 코드를 작성하면 서버가 4000port를 listening 하게 되고 함수가 구현이 되있으면 서버를 만들게 되는 것이다.
+- application 설정에 관한 코드는 application을 만든코드 ```const app = express()``` 와 외부 접속을 listen하는 코드 ```app.listen(4000, 함수명)``` 사이에 작성을 해야 한다.
 - /은 서버의 root, 첫 페이지이다.
 - GET은 HTTP method로 유저가 원하는 페이지를 갖다 달라고 부탁하는 것이다.
-- ```app.get("/", func(함수명))``` 코드는 유저가 root page로 get request를 보내면 func라는 함수로 답하는 것이다.
-- ```app.get("/", func(함수명))``` 에서 func에는 request, response 객체가 있다. 즉 ``` const func = (request, response) => {함수내용} ``` 이다.
-  - ```{함수내용}```에서 ```response.end()``` 를 해주면 서버가 request를 끝내도록 하고 ```res.send("bye")``` 를 해주면 메시지를 화면에 나타내면서 request를 끝낼 수 있다.
+- ```app.get("/", func)``` 코드는 유저가 root page로 get request를 보내면 func라는 함수로 답하는 것이다.
+- ```app.get("/", func)``` 에서 func에는 request, response 객체가 있다. 즉 ``` const func = (request, response) => {함수내용} ``` 이다.
+  - ```{함수내용}```에서 ```response.end()``` 를 해주면 서버가 request를 끝내도록 하고 ```res.send("메시지 내용")``` 를 해주면 메시지를 화면에 나타내면서 request를 끝낼 수 있다.
 
 ## <br> 미들웨어
 - request와 response 사이에 있는 소프트웨어
