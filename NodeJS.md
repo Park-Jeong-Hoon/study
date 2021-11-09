@@ -193,6 +193,8 @@
 ## <br> Async, Await
 - async이 붙은 함수(asynchronous인 함수)에서 await가 붙은 코드는 동작이 정상적으로 완료될 때까지 기다려준다.
 - 특히 DB에 데이터를 저장하는 컨트롤러인 경우에는 DB에 데이터가 저장하는데 시간이 걸리기 때문에 try-catch와 함께 이를 사용해주는 것이 좋다.
+- 프론트엔드에서의 사용
+  - 프론트엔드에서는 ```npm i regenerator-runtime``` 명령어를 이용해서 regenerator-runtime 모듈을 설치한 다음  프론트엔드 코드의 가장 앞부분에 regenerator-runtime를 import 해주어야 한다.
 
 ## <br> DB에 저장하기
 - 컨트롤러에서 데이터를 DB에 저장하는데에는 save와 create 두 가지 방식이 있다.
