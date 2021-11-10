@@ -639,3 +639,13 @@ javascript에서는 random함수를 이용해서 난수를 생성할 수 있다.
 
   init();
   ```
+- removeEventListener
+  
+  태그에 적용되어 있는 이벤트를 제거할 때 사용한다.
+  ```javascript
+  const 변수 = document.getElementById("아이디명"); //태그 가져옴
+
+  변수.addEventLister("적용 이벤트", 이벤트리스너함수); //태그에 이벤트 적용
+
+  변수..removeEventListener("적용 이벤트", 이벤트리스너함수) //적용했던 이벤트 제거
+  ```
