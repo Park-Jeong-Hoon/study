@@ -69,11 +69,12 @@
 ## <br> 미들웨어
 - request와 response 사이에 있는 소프트웨어
 - 모든 controller은 미들웨어가 될 수 있다.
-- ```app.get("/", one(함수명1), two(함수명2))``` 에서 one이 미들웨어, two는 파이널웨어가 되는 것이다.
-  - 서버 설명에서 ```app.get("/", func(함수명))``` 에서 func에는 request, response 객체가 있다고 했는데 여기에 next까지 있다. 그런데 파이널웨어인 경우에는 next가 굳이 필요가 없는 것이고 미들웨어인 경우에는 ``` const one = (request, response, next) => {함수내용} ``` 같은 형태로 사용해주면 된다.
-  - one에서 next를 이용해야 미들웨어가 되면서 one의 다음 함수인 two가 호출이 되고 이용하지 않는다면 파이널웨어가 되버려 two가 호출되지 않는다.
-  - 이렇게 get을 이용하면 미들웨어가 위에서 지정한 "/" route에만 적용이 된다.
-- ```app.use(middlefunc(미들웨어로 사용할 함수 명))``` 이 코드를 모든 get 보다 위에 작성해주면 모든 route에 미들웨어가 적용이 된다.
+- ```app.get("/", one, two)``` (one과 two는 함수명)에서 one이 미들웨어, two는 파이널웨어가 되는 것이다.
+  - 서버 설명에서 ```app.get("/", func)``` 에서 func에는 request, response 객체가 있다고 했는데 여기에 next까지 있다. 그런데 파이널웨어인 경우에는 next가 굳이 필요가 없는 것이고 미들웨어인 경우에는 ``` const one = (request, response, next) => {함수내용} ``` 같은 형태로 사용해주면 된다.
+  - one에서 next를 이용해야 미들웨어가 되면서 one의 다음 함수인 two가 호출이 되고 이용하지 않는다면 파이널웨어가 되버려 two가 호출되지 않는다. next는 ```next();``` 코드를 통해 호출하면 된다.
+  또한 next 이전에 return을 해주면 역시나 미들웨어가 아닌 파이널웨어가 되어버려 다음 함수가 호출되지 않는다.
+  - 이렇게 get에서 미들웨어를 이용하면 위에서 지정한 "/" route에만 미들웨어가 적용이 된다.
+  - ```app.use(one)``` 이 코드를 모든 get 보다 위에 작성해주면 모든 route에 one 이라는 미들웨어가 적용이 된다.
 
 ## <br> morgan
 - node.js 용 request logger middleware
