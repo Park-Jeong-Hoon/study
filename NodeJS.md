@@ -164,6 +164,7 @@
 - 개발자가 자바스크립트로 코드를 적으면 mongoose가 mongoDB에게 전달해준다.
 - 명령창에 ```npm i mongoose``` 라고 쳐서 설치할 수 있다.
 - mongoose를 이용해 find, findById 등과 같이 model로 CRUD 기능을 수행하는 다양한 함수를 사용할 수 있다.
+- https://mongoosejs.com/docs/guide.html 에서 보다 자세한 기능들에 대해 알 수 있다.
 
 ## <br> DB와의 연결
 - mongoDB, mongoose를 모두 설차한 뒤 DB와 연결을 한다.
