@@ -12,12 +12,12 @@
 |@DiscriminatorColumn|
 |@Getter, @Setter|각 속성의 getter와 setter을 만들어줌|
 |@Id|key에 해당하는 속성에 이용|
-|@GeneratedValue|
+|@GeneratedValue|@Id와 함께 사용되며 값 자동생성을 해줌|
 |@Column|컬럼과 매핑해주며 String형 같은 경우 기본값이 varchar(255)인데 length 속성을 이용하면 이 값을 변경할 수 있다.|
 |@Embedded, @Embeddable|
-|@OneToMany|
-|@ManyToOne|
-|@OneToOne|
+|@OneToMany|일대다 매핑|
+|@ManyToOne|다대일 매핑|
+|@OneToOne|일대일 매핑|
 |@JoinColumn|
 |@Enumerated|enum 타입과 매핑해주며 되도록 value속성의 값을 EnumType.ORDINAL이 아닌 EumeType.String으로 사용한다.
 
@@ -29,7 +29,7 @@
 |--|--|
 |@Repository|리포지토리 계층임을 표시
 |@PersistenceContext|
-|@RequiredArgsConstructor|
+|@RequiredArgsConstructor|null값이면 안되는 속성의 값을 할당해주는 생성자|
 
 <br><br>
 
@@ -39,7 +39,7 @@
 |--|--|
 |@Service|서비스 계층임을 표시|
 |@Transactional|
-|@Autowired|
+|@Autowired|의존성 주입을 할 때 사용하는 어노테이션으로 외부에서 객체를 생성해서 주입한다.|
 |@RequiredArgsConstructor|null값이면 안되는 속성의 값을 할당해주는 생성자|
 
 <br><br>
@@ -52,8 +52,8 @@
 |@Slf4j|
 |@RequiredArgsConstructor|null값이면 안되는 속성의 값을 할당해주는 생성자|
 |@RequestMapping|
-|@GetMapping|
-|@PostMapping|
+|@GetMapping|Get 요청을 받는 컨트롤러|
+|@PostMapping|Post 요청을 받는 컨트롤러|
 |@PathVariable|
 |@ModelAttribute|
 |@RequestParam|
