@@ -15,8 +15,8 @@
 |@GeneratedValue|@Id와 함께 사용되며 값 자동생성을 해줌|
 |@Column|컬럼과 매핑해주며 String형 같은 경우 기본값이 varchar(255)인데 length 속성을 이용하면 이 값을 변경할 수 있다.|
 |@Embedded, @Embeddable|
-|@OneToMany|일대다 매핑|
-|@ManyToOne|다대일 매핑|
+|@OneToMany|일대다 매핑 fetch전략 기본이 EAGER|
+|@ManyToOne|다대일 매핑 fetch전략 기본이 EAGER로 되어있는데 LAZY로 해주는 것 지향|
 |@OneToOne|일대일 매핑|
 |@JoinColumn|
 |@Enumerated|enum 타입과 매핑해주며 되도록 value속성의 값을 EnumType.ORDINAL이 아닌 EumeType.String으로 사용한다.
